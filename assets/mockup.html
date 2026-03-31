@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SheGlow — Cada fase, um brilho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #C4929A;
+      --rose-light: #F2DDE0;
+      --rose-pale: #FBF2F3;
+      --gold: #BFA15E;
+      --gold-light: #E8D9B0;
+      --sage: #8FA888;
+      --sage-light: #E3EBE0;
+      --lavender: #9E8FB8;
+      --lavender-light: #E8E2F0;
+      --cream: #FDFBF8;
+      --warm: #F8F5F1;
+      --text: #1C1C1C;
+      --text-mid: #555;
+      --text-soft: #888;
+      --border: rgba(0,0,0,0.06);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+    .glow{background:linear-gradient(135deg,var(--rose),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+
+    /* NAV */
+    header{position:fixed;top:0;width:100%;z-index:100;padding:1.3rem 3rem;display:flex;justify-content:space-between;align-items:center;transition:all .5s cubic-bezier(.16,1,.3,1)}
+    header.scrolled{background:rgba(253,251,248,.92);backdrop-filter:blur(30px);box-shadow:0 0 0 1px var(--border)}
+    .logo{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:600;color:var(--text);text-decoration:none}
+    .logo i{font-style:italic;color:var(--rose)}
+    .nav-r{display:flex;gap:2.2rem;align-items:center}
+    .nav-r a{text-decoration:none;color:var(--text-mid);font-size:.78rem;font-weight:500;transition:color .3s}
+    .nav-r a:hover{color:var(--text)}
+    .nav-btn{background:var(--text)!important;color:var(--cream)!important;padding:.5rem 1.3rem;border-radius:100px;font-size:.72rem!important}
+    .nav-btn:hover{background:var(--rose)!important}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;align-items:center;padding:8rem 0 5rem;position:relative;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 30%,rgba(196,146,154,.12) 0%,transparent 50%),radial-gradient(ellipse at 75% 70%,rgba(191,161,94,.08) 0%,transparent 50%)}
+    .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .hero-left{max-width:500px}
+    .eyebrow{font-size:.6rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;margin-bottom:1rem}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.5vw,3.8rem);font-weight:400;line-height:1.15;letter-spacing:-.02em;margin-bottom:1.5rem}
+    .hero h1 em{font-style:italic}
+    .hero-p{font-size:1.02rem;line-height:1.8;color:var(--text-mid);margin-bottom:2.5rem}
+    .hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.85rem 1.8rem;border-radius:100px;font-size:.78rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .35s}
+    .btn-dark{background:var(--text);color:var(--cream)}
+    .btn-dark:hover{background:var(--rose);transform:translateY(-1px);box-shadow:0 8px 25px rgba(196,146,154,.25)}
+    .btn-light{background:var(--warm);color:var(--text);border:1px solid var(--border)}
+    .btn-light:hover{border-color:var(--rose);color:var(--rose)}
+
+    /* Hero orbit */
+    .hero-right{display:flex;justify-content:center;align-items:center;position:relative;height:440px}
+    .phase-orbit{position:relative;width:380px;height:380px}
+    .orbit-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:280px;height:280px;border-radius:50%;border:1px dashed rgba(0,0,0,.07)}
+    .phase-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--rose-light),var(--gold-light));display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(196,146,154,.2);z-index:3}
+    .phase-center strong{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:600}
+    .phase-center span{font-size:.58rem;color:var(--text-mid);margin-top:.2rem;text-align:center;line-height:1.4}
+    .phase-node{position:absolute;width:90px;height:90px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.08);transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer;z-index:2}
+    .phase-node:hover{transform:scale(1.15);box-shadow:0 15px 40px rgba(0,0,0,.12)}
+    .phase-node strong{font-size:.6rem;font-weight:600}
+    .phase-node span{font-size:.42rem;font-weight:500;color:var(--text-mid);margin-top:2px}
+    .pn-1{top:0;left:50%;transform:translateX(-50%);background:var(--rose-pale);border:2px solid var(--rose-light)}
+    .pn-2{top:50%;right:0;transform:translateY(-50%);background:var(--sage-light);border:2px solid var(--sage)}
+    .pn-3{bottom:0;left:50%;transform:translateX(-50%);background:var(--lavender-light);border:2px solid var(--lavender)}
+    .pn-4{top:50%;left:0;transform:translateY(-50%);background:var(--gold-light);border:2px solid var(--gold)}
+    .pn-1:hover{background:var(--rose-light)}
+    .pn-2:hover{background:#d4e5cf}
+    .pn-3:hover{background:#d8d0e8}
+    .pn-4:hover{background:#e8d9b0}
+
+    /* MARQUEE */
+    .marquee{overflow:hidden;background:var(--text);padding:.75rem 0}
+    .mq-track{display:flex;gap:2.5rem;animation:mq 30s linear infinite;white-space:nowrap}
+    .mq-item{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);flex-shrink:0}
+    .mq-item::after{content:' \2726';color:var(--gold);margin-left:1.2rem}
+    @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* THESIS */
+    .thesis{padding:7rem 0;background:var(--warm)}
+    .thesis .wrap{max-width:800px;text-align:center}
+    .thesis h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;line-height:1.4;margin-bottom:1.5rem}
+    .thesis h2 em{font-style:italic;color:var(--rose)}
+    .thesis>p,.thesis .wrap>p{font-size:.95rem;line-height:1.85;color:var(--text-mid);max-width:600px;margin:0 auto}
+    .thesis-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+    .thesis-card{background:white;border-radius:16px;padding:2rem 1.5rem;text-align:center;border:1px solid var(--border);transition:all .3s}
+    .thesis-card:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,0,0,.06)}
+    .tc-icon{font-size:1.8rem;margin-bottom:1rem}
+    .thesis-card h4{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500;margin-bottom:.5rem}
+    .thesis-card p{font-size:.82rem;line-height:1.6;color:var(--text-soft)}
+
+    /* ESSENTIALS — transformation focused */
+    .essentials{padding:7rem 0;background:white}
+    .section-head{margin-bottom:4rem}
+    .section-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;margin-top:.5rem}
+    .section-head h2 em{font-style:italic;color:var(--rose)}
+    .section-head p{font-size:.88rem;color:var(--text-soft);margin-top:.6rem;max-width:480px}
+
+    .ess-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+    .ess-card{border-radius:20px;padding:2.2rem 1.5rem;text-align:center;transition:all .4s;position:relative;overflow:hidden;cursor:pointer;border:1px solid var(--border);background:var(--cream)}
+    .ess-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.07)}
+
+    /* glow stripe on hover */
+    .ess-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;transform:scaleX(0);transition:transform .4s;border-radius:0 0 20px 20px}
+    .ess-card:hover::after{transform:scaleX(1)}
+    .ess-card:nth-child(1)::after{background:var(--rose)}
+    .ess-card:nth-child(2)::after{background:#6BA8B8}
+    .ess-card:nth-child(3)::after{background:var(--gold)}
+    .ess-card:nth-child(4)::after{background:#E8A840}
+    .ess-card:nth-child(5)::after{background:var(--sage)}
+
+    .ess-emoji{font-size:2.2rem;margin-bottom:1.2rem}
+    .ess-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:.15rem}
+    .ess-name i{font-style:italic;color:var(--rose);font-weight:400}
+
+    .ess-promise{font-size:.85rem;font-weight:500;color:var(--text);margin-bottom:.8rem;line-height:1.4}
+    .ess-feel{font-size:.78rem;color:var(--text-soft);line-height:1.6;margin-bottom:1.5rem;font-style:italic}
+
+    .ess-price{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:.3rem}
+    .ess-price small{font-size:.62rem;color:var(--text-soft);font-weight:400;font-family:'Inter',sans-serif}
+    .ess-period{font-size:.62rem;color:var(--text-soft)}
+
+    /* PHASES */
+    .phases{padding:7rem 0;background:var(--text);color:white;overflow:hidden}
+    .phases .section-head h2{color:white}
+    .phases .section-head h2 em{color:var(--gold-light)}
+    .phases .section-head p{color:rgba(255,255,255,.45)}
+    .phases .eyebrow{color:var(--gold-light)}
+
+    .phase-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .phase-card{border-radius:20px;padding:2.5rem 2rem;transition:all .4s;cursor:pointer;position:relative;overflow:hidden}
+    .phase-card:hover{transform:translateY(-6px)}
+    .phase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+
+    .pc-cycle{background:rgba(143,168,136,.08)}
+    .pc-cycle::before{background:var(--sage)}
+    .pc-cycle:hover{background:rgba(143,168,136,.14)}
+    .pc-mama{background:rgba(196,146,154,.08)}
+    .pc-mama::before{background:var(--rose)}
+    .pc-mama:hover{background:rgba(196,146,154,.14)}
+    .pc-prime{background:rgba(158,143,184,.08)}
+    .pc-prime::before{background:var(--lavender)}
+    .pc-prime:hover{background:rgba(158,143,184,.14)}
+
+    .pc-emoji{font-size:2.5rem;margin-bottom:1.5rem}
+    .pc-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:500;margin-bottom:.3rem}
+    .pc-title i{font-style:italic}
+    .pc-cycle .pc-title i{color:var(--sage)}
+    .pc-mama .pc-title i{color:var(--rose-light)}
+    .pc-prime .pc-title i{color:var(--lavender)}
+
+    .pc-for{font-size:.72rem;color:rgba(255,255,255,.3);margin-bottom:1.5rem}
+    .pc-promise{font-size:1rem;font-weight:500;color:rgba(255,255,255,.85);line-height:1.5;margin-bottom:1rem}
+    .pc-feel{font-size:.85rem;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:2rem;font-style:italic}
+
+    .pc-what{list-style:none}
+    .pc-what li{font-size:.8rem;color:rgba(255,255,255,.5);padding:.55rem 0;border-top:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:.5rem}
+    .pc-what li::before{content:'\2726';font-size:.45rem}
+    .pc-cycle .pc-what li::before{color:var(--sage)}
+    .pc-mama .pc-what li::before{color:var(--rose)}
+    .pc-prime .pc-what li::before{color:var(--lavender)}
+
+    .pc-status{display:inline-block;margin-top:1.5rem;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.2rem;border-radius:100px;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.3)}
+
+    /* SOCIAL PROOF */
+    .proof{padding:5rem 0;background:var(--warm)}
+    .proof .wrap{text-align:center}
+    .proof h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;margin-bottom:3rem}
+    .proof h2 em{font-style:italic;color:var(--rose)}
+    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+    .proof-stat{padding:2rem;border-right:1px solid var(--border)}
+    .proof-stat:last-child{border-right:none}
+    .proof-stat strong{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:600;display:block;margin-bottom:.3rem}
+    .proof-stat:nth-child(1) strong{color:var(--rose)}
+    .proof-stat:nth-child(2) strong{color:var(--sage)}
+    .proof-stat:nth-child(3) strong{color:var(--gold)}
+    .proof-stat:nth-child(4) strong{color:var(--lavender)}
+    .proof-stat span{font-size:.78rem;color:var(--text-soft);line-height:1.5}
+
+    /* WAITLIST */
+    .waitlist{padding:7rem 0;text-align:center;background:linear-gradient(180deg,var(--rose-pale) 0%,var(--cream) 100%)}
+    .wl-inner{max-width:480px;margin:0 auto}
+    .waitlist h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;margin-bottom:.6rem}
+    .waitlist h2 em{font-style:italic;color:var(--rose)}
+    .wl-sub{font-size:.9rem;color:var(--text-mid);margin-bottom:2rem;line-height:1.7}
+    .wl-form{display:flex;gap:.5rem;margin-bottom:1.2rem}
+    .wl-form input{flex:1;padding:.85rem 1.3rem;border:1.5px solid var(--border);border-radius:100px;font-family:'Inter',sans-serif;font-size:.85rem;background:white;outline:none;transition:border .3s}
+    .wl-form input:focus{border-color:var(--rose)}
+    .wl-form button{background:var(--text);color:var(--cream);border:none;padding:.85rem 1.6rem;border-radius:100px;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .3s;white-space:nowrap}
+    .wl-form button:hover{background:var(--rose)}
+    .wl-perks{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+    .wl-perks span{font-size:.72rem;color:var(--text-soft)}
+    .ck{color:var(--gold);font-weight:700;margin-right:.15rem}
+
+    /* FOOTER */
+    footer{background:var(--text);color:rgba(255,255,255,.35);padding:3.5rem 0 1.5rem}
+    .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+    .ft-brand p{font-size:.78rem;line-height:1.7;margin-top:.8rem;max-width:240px}
+    .ft-brand .logo{color:white;display:inline-block}
+    .ft-col h5{font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.9rem}
+    .ft-col ul{list-style:none}
+    .ft-col li{margin-bottom:.45rem}
+    .ft-col a{color:rgba(255,255,255,.35);text-decoration:none;font-size:.78rem;transition:color .3s}
+    .ft-col a:hover{color:var(--rose-light)}
+    .ft-line{border-top:1px solid rgba(255,255,255,.05);padding-top:1.2rem;text-align:center;font-size:.68rem}
+    .ft-line strong{color:var(--gold-light);font-weight:500}
+
+    /* ANIM */
+    .rv{opacity:0;transform:translateY(20px);transition:all .7s cubic-bezier(.16,1,.3,1)}
+    .rv.v{opacity:1;transform:translateY(0)}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){.ess-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:768px){
+      .nav-r a:not(.nav-btn){display:none}
+      .hero .wrap{grid-template-columns:1fr;text-align:center}
+      .hero-left{max-width:100%;margin:0 auto}
+      .hero-p{margin:0 auto 2.5rem}
+      .hero-btns{justify-content:center}
+      .hero-right{height:320px;margin-top:1rem}
+      .phase-orbit{width:300px;height:300px}
+      .phase-center{width:110px;height:110px}
+      .phase-center strong{font-size:.9rem}
+      .phase-node{width:72px;height:72px}
+      .phase-node strong{font-size:.5rem}
+      .orbit-ring{width:220px;height:220px}
+      .ess-grid{grid-template-columns:1fr 1fr}
+      .thesis-cards,.phase-cards{grid-template-columns:1fr}
+      .proof-grid{grid-template-columns:1fr 1fr}
+      .proof-stat{border-bottom:1px solid var(--border)}
+      .proof-stat:nth-child(2),.proof-stat:last-child{border-right:none}
+      .ft-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:480px){
+      header{padding:1rem 1.5rem}
+      .ess-grid{grid-template-columns:1fr;max-width:320px;margin:0 auto}
+      .wl-form{flex-direction:column}
+      .ft-grid{grid-template-columns:1fr}
+      .proof-grid{grid-template-columns:1fr}
+      .proof-stat{border-right:none}
+    }
+  </style>
+</head>
+<body>
+
+  <header id="hd">
+    <a href="#" class="logo">She<i>Glow</i></a>
+    <div class="nav-r">
+      <a href="#essentials">Essentials</a>
+      <a href="#phases">Fases</a>
+      <a href="#waitlist" class="nav-btn">Waitlist</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="wrap">
+      <div class="hero-left rv">
+        <div class="eyebrow" style="color:var(--rose)">Wellness por Fase de Vida</div>
+        <h1>Seu corpo muda.<br>Seu suplemento<br><em class="glow">tambem deveria.</em></h1>
+        <p class="hero-p">A primeira marca brasileira de wellness que acompanha as fases da sua vida. Porque voce aos 30 merece algo diferente de voce aos 45.</p>
+        <div class="hero-btns">
+          <a href="#phases" class="btn btn-dark">Descobrir minha fase &rarr;</a>
+          <a href="#essentials" class="btn btn-light">Ver produtos</a>
+        </div>
+      </div>
+      <div class="hero-right rv">
+        <div class="phase-orbit">
+          <div class="orbit-ring"></div>
+          <div class="phase-center">
+            <strong>She<i style="color:var(--rose)">Glow</i></strong>
+            <span>Cada fase,<br>um brilho</span>
+          </div>
+          <div class="phase-node pn-1"><strong>Glow<i style="color:var(--rose)">Cycle</i></strong><span>Ciclo</span></div>
+          <div class="phase-node pn-2"><strong>Glow<i style="color:var(--sage)">Mama</i></strong><span>Gestacao</span></div>
+          <div class="phase-node pn-3"><strong>Glow<i style="color:var(--lavender)">Prime</i></strong><span>Menopausa</span></div>
+          <div class="phase-node pn-4"><strong>Glow<i style="color:var(--gold)">Essentials</i></strong><span>Base diaria</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="mq-track">
+      <span class="mq-item">Primeira marca BR por fase de vida</span>
+      <span class="mq-item">Cada fase, um brilho</span>
+      <span class="mq-item">Ciencia que voce sente</span>
+      <span class="mq-item">Sem gluten &middot; Sem lactose</span>
+      <span class="mq-item">Para mulheres que mudam o jogo</span>
+      <span class="mq-item">Primeira marca BR por fase de vida</span>
+      <span class="mq-item">Cada fase, um brilho</span>
+      <span class="mq-item">Ciencia que voce sente</span>
+      <span class="mq-item">Sem gluten &middot; Sem lactose</span>
+      <span class="mq-item">Para mulheres que mudam o jogo</span>
+    </div>
+  </div>
+
+  <!-- THESIS -->
+  <section class="thesis rv">
+    <div class="wrap">
+      <div class="eyebrow glow" style="text-align:center">Por que existimos</div>
+      <h2>O mercado vende <em>ingredientes</em>.<br>Nos entregamos <em>transformacoes</em>.</h2>
+      <p>Seu corpo nao e o mesmo em cada fase da vida. Seu ciclo muda, sua gestacao muda, sua menopausa muda. Por que seu suplemento seria sempre igual?</p>
+      <div class="thesis-cards">
+        <div class="thesis-card">
+          <div class="tc-icon">&#127793;</div>
+          <h4>Cicla</h4>
+          <p>Seu corpo pede nutrientes diferentes a cada 14 dias. Nos acompanhamos esse ritmo.</p>
+        </div>
+        <div class="thesis-card">
+          <div class="tc-icon">&#128150;</div>
+          <h4>Gesta</h4>
+          <p>Voce e seu bebe merecem precisao, nao formulas genericas de "pre-natal".</p>
+        </div>
+        <div class="thesis-card">
+          <div class="tc-icon">&#10024;</div>
+          <h4>Transiciona</h4>
+          <p>Menopausa nao e tabu. E uma fase poderosa que merece suporte real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESSENTIALS -->
+  <section class="essentials" id="essentials">
+    <div class="wrap">
+      <div class="section-head rv">
+        <div class="eyebrow glow">Glow Essentials</div>
+        <h2>A base do seu <em>brilho</em> diario</h2>
+        <p>Cinco transformacoes essenciais. Sua porta de entrada para o universo SheGlow.</p>
+      </div>
+
+      <div class="ess-grid rv">
+        <div class="ess-card">
+          <div class="ess-emoji">&#128135;&#8205;&#9792;&#65039;</div>
+          <div class="ess-name">Glow<i>Hair</i></div>
+          <p class="ess-promise">Cabelo que para de cair e volta a brilhar</p>
+          <p class="ess-feel">"Achei baby hairs no espelho no segundo mes"</p>
+          <div class="ess-price">R$ 149<small>,90</small></div>
+          <div class="ess-period">por mes &middot; 60 capsulas</div>
+        </div>
+
+        <div class="ess-card">
+          <div class="ess-emoji">&#129526;</div>
+          <div class="ess-name">Glow<i>Skin</i></div>
+          <p class="ess-promise">Pele firme e articulacoes sem dor</p>
+          <p class="ess-feel">"Minha pele voltou a ter aquele glow natural"</p>
+          <div class="ess-price">R$ 189<small>,90</small></div>
+          <div class="ess-period">por mes &middot; 30 doses</div>
+        </div>
+
+        <div class="ess-card">
+          <div class="ess-emoji">&#127793;</div>
+          <div class="ess-name">Glow<i>Focus</i></div>
+          <p class="ess-promise">Clareza mental e adeus brain fog</p>
+          <p class="ess-feel">"Consigo focar por horas sem aquela nevoa"</p>
+          <div class="ess-price">R$ 129<small>,90</small></div>
+          <div class="ess-period">por mes &middot; 60 capsulas</div>
+        </div>
+
+        <div class="ess-card">
+          <div class="ess-emoji">&#9728;&#65039;</div>
+          <div class="ess-name">Glow<i>Shield</i></div>
+          <p class="ess-promise">Imunidade blindada e ossos fortes</p>
+          <p class="ess-feel">"Nao peguei nem um resfriado esse inverno"</p>
+          <div class="ess-price">R$ 89<small>,90</small></div>
+          <div class="ess-period">por mes &middot; 60 comprimidos</div>
+        </div>
+
+        <div class="ess-card">
+          <div class="ess-emoji">&#9889;</div>
+          <div class="ess-name">Glow<i>Energy</i></div>
+          <p class="ess-promise">Energia o dia inteiro, sem cafe</p>
+          <p class="ess-feel">"Larguei o terceiro cafe da tarde sem sentir"</p>
+          <div class="ess-price">R$ 159<small>,90</small></div>
+          <div class="ess-period">por mes &middot; 60 capsulas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASES -->
+  <section class="phases" id="phases">
+    <div class="wrap">
+      <div class="section-head rv">
+        <div class="eyebrow">O que nos torna unicas</div>
+        <h2>Glow <em>Phases</em></h2>
+        <p>Tres linhas que nenhuma marca brasileira oferece. Seu corpo muda — nos mudamos junto.</p>
+      </div>
+
+      <div class="phase-cards rv">
+        <div class="phase-card pc-cycle">
+          <div class="pc-emoji">&#127768;</div>
+          <h3 class="pc-title">Glow<i>Cycle</i></h3>
+          <div class="pc-for">Para mulheres com ciclo ativo &middot; 20-42 anos</div>
+          <p class="pc-promise">Dois frascos. Um ciclo. Nutrientes que mudam com voce a cada 14 dias.</p>
+          <p class="pc-feel">"Eu sempre achei que TPM era destino. Nao e."</p>
+          <ul class="pc-what">
+            <li>Frasco 1: para a fase em que voce esta construindo energia</li>
+            <li>Frasco 2: para a fase em que voce precisa de acolhimento</li>
+            <li>Primeiro produto do tipo no Brasil</li>
+          </ul>
+          <div class="pc-status">Lancamento Onda 2</div>
+        </div>
+
+        <div class="phase-card pc-mama">
+          <div class="pc-emoji">&#129328;</div>
+          <h3 class="pc-title">Glow<i>Mama</i></h3>
+          <div class="pc-for">Gestacao &middot; Pos-parto &middot; Lactacao</div>
+          <p class="pc-promise">Tudo que voce e seu bebe precisam. Nada que nao precisam.</p>
+          <p class="pc-feel">"Finalmente um pre-natal que eu entendo por que estou tomando"</p>
+          <ul class="pc-what">
+            <li>Nutrientes nas formas mais seguras e absorviveis</li>
+            <li>Pensado para cada trimestre</li>
+            <li>Sem excesso, sem lacuna</li>
+          </ul>
+          <div class="pc-status">Em desenvolvimento</div>
+        </div>
+
+        <div class="phase-card pc-prime">
+          <div class="pc-emoji">&#128171;</div>
+          <h3 class="pc-title">Glow<i>Prime</i></h3>
+          <div class="pc-for">Perimenopausa &middot; Menopausa &middot; 42-60 anos</div>
+          <p class="pc-promise">Essa fase nao e o fim. E o comeco da sua versao mais poderosa.</p>
+          <p class="pc-feel">"Eu nao sabia que podia me sentir tao bem aos 50"</p>
+          <ul class="pc-what">
+            <li>Suporte para fogachos, sono e humor</li>
+            <li>Protecao para ossos e articulacoes</li>
+            <li>Territorio virgem no Brasil — nos somos as primeiras</li>
+          </ul>
+          <div class="pc-status">Em desenvolvimento</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF / NUMBERS -->
+  <section class="proof rv">
+    <div class="wrap">
+      <h2>Numeros que <em>importam</em></h2>
+      <div class="proof-grid">
+        <div class="proof-stat">
+          <strong>68%</strong>
+          <span>das mulheres 30+ sentem queda de cabelo</span>
+        </div>
+        <div class="proof-stat">
+          <strong>0</strong>
+          <span>marcas BR com suplemento por ciclo menstrual</span>
+        </div>
+        <div class="proof-stat">
+          <strong>13M</strong>
+          <span>de brasileiras na perimenopausa sem suporte adequado</span>
+        </div>
+        <div class="proof-stat">
+          <strong>1a</strong>
+          <span>marca brasileira de wellness por fase de vida</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="waitlist" id="waitlist">
+    <div class="wl-inner rv">
+      <div class="eyebrow" style="color:var(--rose)">Lancamento em breve</div>
+      <h2>Em qual fase voce <em>esta</em>?</h2>
+      <p class="wl-sub">Entre na waitlist. Acesso antecipado + 15% OFF + frete gratis na primeira compra.</p>
+      <form class="wl-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Voce esta na lista!';this.querySelector('button').style.background='var(--rose)'">
+        <input type="email" placeholder="Seu melhor email" required>
+        <button type="submit">Quero entrar</button>
+      </form>
+      <div class="wl-perks">
+        <span><span class="ck">&#10003;</span> Acesso antecipado</span>
+        <span><span class="ck">&#10003;</span> 15% OFF</span>
+        <span><span class="ck">&#10003;</span> Frete gratis</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="ft-grid">
+        <div class="ft-brand">
+          <a href="#" class="logo">She<i>Glow</i></a>
+          <p>A primeira marca brasileira de wellness que acompanha as fases da vida feminina. Cada fase, um brilho.</p>
+        </div>
+        <div class="ft-col">
+          <h5>Essentials</h5>
+          <ul>
+            <li><a href="#">GlowHair</a></li>
+            <li><a href="#">GlowSkin</a></li>
+            <li><a href="#">GlowFocus</a></li>
+            <li><a href="#">GlowShield</a></li>
+            <li><a href="#">GlowEnergy</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <h5>Phases</h5>
+          <ul>
+            <li><a href="#">GlowCycle</a></li>
+            <li><a href="#">GlowMama</a></li>
+            <li><a href="#">GlowPrime</a></li>
+          </ul>
+        </div>
+        <div class="ft-col">
+          <h5>SheGlow</h5>
+          <ul>
+            <li><a href="#">Nossa Historia</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="ft-line">&copy; 2026 <strong>SheGlow</strong>. Todos os direitos reservados. Este produto nao e um medicamento.</div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll',()=>document.getElementById('hd').classList.toggle('scrolled',scrollY>60));
+    const o=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('v')}),{threshold:.12});
+    document.querySelectorAll('.rv').forEach(el=>o.observe(el));
+  </script>
+</body>
+</html>

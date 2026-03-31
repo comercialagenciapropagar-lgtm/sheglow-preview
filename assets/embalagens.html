@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SheGlow — Produtos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#FDFBF8;--warm:#F6F3EF;--text:#1C1C1C;--mid:#555;--soft:#999;--border:rgba(0,0,0,.06);
+      --rose:#C4929A;--blue:#6BA8B8;--gold:#BFA15E;--amber:#D4A040;--sage:#8FA888;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);-webkit-font-smoothing:antialiased}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:50;background:rgba(253,251,248,.92);backdrop-filter:blur(30px);
+      border-bottom:1px solid var(--border);padding:.9rem 3rem;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;text-decoration:none;color:var(--text)}
+    .logo i{font-style:italic;color:var(--rose)}
+    .nav-r{display:flex;gap:1.5rem;align-items:center}
+    .nav-r a{text-decoration:none;font-size:.75rem;font-weight:500;color:var(--mid);transition:color .3s}
+    .nav-r a:hover{color:var(--text)}
+
+    /* HERO */
+    .hero{padding:4rem 3rem 3rem;max-width:700px}
+    .hero-ey{font-size:.58rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--rose);margin-bottom:.8rem}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.2;margin-bottom:.8rem}
+    .hero h1 em{font-style:italic;color:var(--rose)}
+    .hero p{font-size:.92rem;color:var(--mid);line-height:1.7}
+
+    /* PRODUCT GRID */
+    .products{padding:0 3rem 5rem}
+    .pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+
+    .pcard{background:var(--cream);padding:0;display:flex;flex-direction:column;transition:background .4s;cursor:pointer;position:relative}
+    .pcard:hover{background:var(--warm)}
+
+    /* Color band top */
+    .pcard-color{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .pcard:nth-child(1) .pcard-color{background:linear-gradient(160deg,#FAF0EF 0%,#F2DDE0 40%,#E4C4C8 100%)}
+    .pcard:nth-child(2) .pcard-color{background:linear-gradient(160deg,#EFF6F8 0%,#D4E8EE 40%,#B8D8E4 100%)}
+    .pcard:nth-child(3) .pcard-color{background:linear-gradient(160deg,#F8F4EC 0%,#EDE4D0 40%,#DDD0B0 100%)}
+    .pcard:nth-child(4) .pcard-color{background:linear-gradient(160deg,#FDF6E8 0%,#F5E6C4 40%,#E8D4A0 100%)}
+    .pcard:nth-child(5) .pcard-color{background:linear-gradient(160deg,#F0F5F0 0%,#DCE8DC 40%,#C4D8C4 100%)}
+
+    /* Abstract shape inside color */
+    .pcard-shape{
+      width:100px;height:140px;border-radius:22px 22px 16px 16px;
+      background:rgba(255,255,255,.5);backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.6);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;padding:12px;
+      box-shadow:0 10px 40px rgba(0,0,0,.05);
+      transition:transform .5s cubic-bezier(.16,1,.3,1);
+    }
+    .pcard:hover .pcard-shape{transform:translateY(-8px)}
+    .pcard-shape .ps-logo{font-family:'Playfair Display',serif;font-size:.55rem;font-weight:600;color:var(--text);opacity:.7;letter-spacing:.04em}
+    .pcard-shape .ps-logo i{font-style:italic}
+    .pcard-shape .ps-line{width:20px;height:1px;margin:6px auto;opacity:.15;background:var(--text)}
+    .pcard-shape .ps-name{font-family:'Playfair Display',serif;font-size:.7rem;font-weight:600;letter-spacing:.02em}
+    .pcard:nth-child(1) .ps-name{color:var(--rose)}
+    .pcard:nth-child(2) .ps-name{color:var(--blue)}
+    .pcard:nth-child(3) .ps-name{color:var(--gold)}
+    .pcard:nth-child(4) .ps-name{color:var(--amber)}
+    .pcard:nth-child(5) .ps-name{color:var(--sage)}
+    .pcard-shape .ps-type{font-size:.32rem;color:var(--soft);text-transform:uppercase;letter-spacing:.12em;margin-top:4px}
+
+    /* Card info */
+    .pcard-info{padding:1.5rem 1.3rem 1.8rem;flex:1;display:flex;flex-direction:column}
+    .pcard-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:.15rem}
+    .pcard-name i{font-style:italic;font-weight:400}
+    .pcard:nth-child(1) .pcard-name i{color:var(--rose)}
+    .pcard:nth-child(2) .pcard-name i{color:var(--blue)}
+    .pcard:nth-child(3) .pcard-name i{color:var(--gold)}
+    .pcard:nth-child(4) .pcard-name i{color:var(--amber)}
+    .pcard:nth-child(5) .pcard-name i{color:var(--sage)}
+
+    .pcard-promise{font-size:.88rem;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:.6rem}
+    .pcard-feel{font-size:.78rem;color:var(--soft);line-height:1.5;font-style:italic;margin-bottom:auto;padding-bottom:1.2rem}
+
+    .pcard-bottom{border-top:1px solid var(--border);padding-top:1rem;display:flex;justify-content:space-between;align-items:flex-end}
+    .pcard-price{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600}
+    .pcard-price span{display:block;font-family:'Inter',sans-serif;font-size:.62rem;color:var(--soft);font-weight:400;margin-top:.1rem}
+    .pcard-format{font-size:.6rem;color:var(--soft);text-align:right;line-height:1.5}
+
+    /* EXPANDED PRODUCT */
+    .product-detail{display:none;padding:0 3rem 5rem}
+    .product-detail.active{display:block}
+
+    .pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:white}
+
+    .pd-visual{min-height:550px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .pd-visual::after{content:'';position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);width:80px;height:6px;border-radius:3px;background:rgba(0,0,0,.04)}
+
+    .pd-label{
+      width:180px;padding:2rem 1.2rem;text-align:center;
+      background:rgba(255,255,255,.7);backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,.8);border-radius:16px;
+      box-shadow:0 15px 50px rgba(0,0,0,.06);
+      transition:transform .6s cubic-bezier(.16,1,.3,1);
+    }
+    .pd-visual:hover .pd-label{transform:translateY(-6px)}
+
+    .pdl-logo{font-family:'Playfair Display',serif;font-size:.75rem;font-weight:600;color:var(--text);opacity:.6}
+    .pdl-logo i{font-style:italic}
+    .pdl-line{width:30px;height:1px;margin:10px auto;background:var(--text);opacity:.1}
+    .pdl-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:4px}
+    .pdl-promise{font-size:.48rem;color:var(--mid);letter-spacing:.06em;text-transform:uppercase;font-weight:500;line-height:1.5;margin-bottom:10px}
+    .pdl-div{width:100%;height:1px;background:rgba(0,0,0,.04);margin:8px 0}
+    .pdl-format{font-size:.42rem;color:var(--soft);letter-spacing:.1em;text-transform:uppercase}
+    .pdl-badges{display:flex;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+    .pdl-badge{font-size:.32rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:100px;border:1px solid rgba(0,0,0,.06);color:var(--soft)}
+
+    .pd-content{padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
+    .pd-ey{font-size:.58rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;margin-bottom:.8rem}
+    .pd-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;margin-bottom:.3rem}
+    .pd-title i{font-style:italic;font-weight:400}
+    .pd-tagline{font-size:1.1rem;color:var(--mid);font-style:italic;margin-bottom:1.5rem;line-height:1.5}
+    .pd-quote{font-size:.88rem;color:var(--soft);line-height:1.7;padding:1rem 0 1rem 1.2rem;border-left:2px solid;margin-bottom:2rem}
+
+    .pd-what{margin-bottom:2rem}
+    .pd-what h4{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-bottom:.8rem}
+    .pd-what p{font-size:.85rem;color:var(--mid);line-height:1.7}
+
+    .pd-results{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:2rem}
+    .pd-res{background:var(--cream);border-radius:12px;padding:1rem;text-align:center}
+    .pd-res strong{display:block;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600}
+    .pd-res span{font-size:.62rem;color:var(--soft);line-height:1.4}
+
+    .pd-badges{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:2rem}
+    .pd-badge{font-size:.6rem;font-weight:500;padding:.4rem .8rem;border-radius:100px;border:1px solid var(--border);color:var(--soft)}
+
+    .pd-pricing{padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .pd-price-main strong{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:600}
+    .pd-price-main small{font-size:.78rem;color:var(--soft);font-weight:400}
+    .pd-price-sub{font-size:.72rem;color:var(--soft);margin-top:.2rem}
+    .pd-cta{background:var(--text);color:var(--cream);border:none;padding:.85rem 2rem;border-radius:100px;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
+    .pd-cta:hover{background:var(--rose);transform:translateY(-1px)}
+
+    /* Back label */
+    .pd-back{margin-top:1px;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:white;display:grid;grid-template-columns:repeat(3,1fr)}
+    .pdb-col{padding:1.8rem 1.5rem;border-right:1px solid var(--border)}
+    .pdb-col:last-child{border-right:none}
+    .pdb-col h5{font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+    .pdb-col p{font-size:.78rem;line-height:1.7;color:var(--mid)}
+    .pdb-col ul{list-style:none}
+    .pdb-col li{font-size:.78rem;color:var(--mid);padding:.25rem 0}
+    .pdb-warn{font-size:.65rem;color:var(--soft);font-style:italic;margin-top:.8rem;line-height:1.5}
+
+    /* color assignments for detail */
+    .pd-hair .pd-visual{background:linear-gradient(160deg,#FAF0EF,#F2DDE0,#E8CFC8)}
+    .pd-hair .pdl-name,.pd-hair .pd-title i,.pd-hair .pd-ey{color:var(--rose)}
+    .pd-hair .pd-quote{border-color:var(--rose)}
+    .pd-hair .pd-res strong{color:var(--rose)}
+
+    .pd-skin .pd-visual{background:linear-gradient(160deg,#EFF6F8,#D4E8EE,#B8D8E4)}
+    .pd-skin .pdl-name,.pd-skin .pd-title i,.pd-skin .pd-ey{color:var(--blue)}
+    .pd-skin .pd-quote{border-color:var(--blue)}
+    .pd-skin .pd-res strong{color:var(--blue)}
+
+    .pd-focus .pd-visual{background:linear-gradient(160deg,#F8F4EC,#EDE4D0,#DDD0B0)}
+    .pd-focus .pdl-name,.pd-focus .pd-title i,.pd-focus .pd-ey{color:var(--gold)}
+    .pd-focus .pd-quote{border-color:var(--gold)}
+    .pd-focus .pd-res strong{color:var(--gold)}
+
+    .pd-shield .pd-visual{background:linear-gradient(160deg,#FDF6E8,#F5E6C4,#E8D4A0)}
+    .pd-shield .pdl-name,.pd-shield .pd-title i,.pd-shield .pd-ey{color:var(--amber)}
+    .pd-shield .pd-quote{border-color:var(--amber)}
+    .pd-shield .pd-res strong{color:var(--amber)}
+
+    .pd-energy .pd-visual{background:linear-gradient(160deg,#F0F5F0,#DCE8DC,#C4D8C4)}
+    .pd-energy .pdl-name,.pd-energy .pd-title i,.pd-energy .pd-ey{color:var(--sage)}
+    .pd-energy .pd-quote{border-color:var(--sage)}
+    .pd-energy .pd-res strong{color:var(--sage)}
+
+    .back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:500;color:var(--soft);
+      text-decoration:none;margin-bottom:1.5rem;transition:color .3s;cursor:pointer;background:none;border:none;font-family:'Inter',sans-serif}
+    .back-btn:hover{color:var(--text)}
+
+    @media(max-width:1024px){.pgrid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:768px){
+      nav{padding:.9rem 1.5rem}
+      .hero,.products,.product-detail{padding-left:1.5rem;padding-right:1.5rem}
+      .pgrid{grid-template-columns:1fr 1fr}
+      .pd-grid{grid-template-columns:1fr}
+      .pd-visual{min-height:350px}
+      .pd-back{grid-template-columns:1fr}
+      .pdb-col{border-right:none;border-bottom:1px solid var(--border)}
+      .pd-results{grid-template-columns:1fr 1fr 1fr}
+    }
+    @media(max-width:480px){
+      .pgrid{grid-template-columns:1fr}
+      .pd-pricing{flex-direction:column;gap:1rem;align-items:flex-start}
+      .pd-results{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo">She<i>Glow</i></a>
+    <div class="nav-r">
+      <a href="#" onclick="showGrid()">Todos os produtos</a>
+      <a href="#">Fases</a>
+      <a href="#">Waitlist</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero" id="hero-section">
+    <div class="hero-ey">Glow Essentials</div>
+    <h1>Cinco transformacoes.<br>Um <em>ritual</em>.</h1>
+    <p>Nao vendemos formulas. Vendemos o que voce sente no espelho e na sua rotina. Clique em qualquer produto para explorar.</p>
+  </div>
+
+  <!-- GRID -->
+  <div class="products" id="grid-section">
+    <div class="pgrid">
+
+      <div class="pcard" onclick="showProduct('hair')">
+        <div class="pcard-color">
+          <div class="pcard-shape">
+            <div class="ps-logo">She<i>Glow</i></div>
+            <div class="ps-line"></div>
+            <div class="ps-name">GlowHair</div>
+            <div class="ps-type">60 capsulas</div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">Glow<i>Hair</i></div>
+          <div class="pcard-promise">Cabelo que para de cair e volta a brilhar</div>
+          <div class="pcard-feel">"Achei baby hairs no segundo mes"</div>
+          <div class="pcard-bottom">
+            <div class="pcard-price">R$ 149,90<span>Assine por R$ 127/mes</span></div>
+            <div class="pcard-format">60 caps<br>30 dias</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="showProduct('skin')">
+        <div class="pcard-color">
+          <div class="pcard-shape">
+            <div class="ps-logo">She<i>Glow</i></div>
+            <div class="ps-line"></div>
+            <div class="ps-name">GlowSkin</div>
+            <div class="ps-type">567g powder</div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">Glow<i>Skin</i></div>
+          <div class="pcard-promise">Pele firme e aquele glow natural de volta</div>
+          <div class="pcard-feel">"As linhas finas suavizaram visivelmente"</div>
+          <div class="pcard-bottom">
+            <div class="pcard-price">R$ 189,90<span>Assine por R$ 161/mes</span></div>
+            <div class="pcard-format">28 doses<br>Grassfed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="showProduct('focus')">
+        <div class="pcard-color">
+          <div class="pcard-shape">
+            <div class="ps-logo">She<i>Glow</i></div>
+            <div class="ps-line"></div>
+            <div class="ps-name">GlowFocus</div>
+            <div class="ps-type">60 capsulas</div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">Glow<i>Focus</i></div>
+          <div class="pcard-promise">Clareza mental e adeus brain fog</div>
+          <div class="pcard-feel">"Consigo focar horas sem aquela nevoa"</div>
+          <div class="pcard-bottom">
+            <div class="pcard-price">R$ 129,90<span>Assine por R$ 110/mes</span></div>
+            <div class="pcard-format">60 caps<br>1000mg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="showProduct('shield')">
+        <div class="pcard-color">
+          <div class="pcard-shape">
+            <div class="ps-logo">She<i>Glow</i></div>
+            <div class="ps-line"></div>
+            <div class="ps-name">GlowShield</div>
+            <div class="ps-type">60 comprimidos</div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">Glow<i>Shield</i></div>
+          <div class="pcard-promise">Imunidade blindada e ossos fortes</div>
+          <div class="pcard-feel">"Nao peguei um resfriado esse inverno"</div>
+          <div class="pcard-bottom">
+            <div class="pcard-price">R$ 89,90<span>Assine por R$ 76/mes</span></div>
+            <div class="pcard-format">60 comp<br>230mg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="showProduct('energy')">
+        <div class="pcard-color">
+          <div class="pcard-shape">
+            <div class="ps-logo">She<i>Glow</i></div>
+            <div class="ps-line"></div>
+            <div class="ps-name">GlowEnergy</div>
+            <div class="ps-type">60 capsulas</div>
+          </div>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">Glow<i>Energy</i></div>
+          <div class="pcard-promise">Energia o dia inteiro, sem cafe</div>
+          <div class="pcard-feel">"Larguei o terceiro cafe da tarde"</div>
+          <div class="pcard-bottom">
+            <div class="pcard-price">R$ 159,90<span>Assine por R$ 135/mes</span></div>
+            <div class="pcard-format">60 caps<br>5-em-1</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ DETAIL: GLOWHAIR ══ -->
+  <div class="product-detail pd-hair" id="detail-hair">
+    <button class="back-btn" onclick="showGrid()">&larr; Voltar para todos</button>
+    <div class="pd-grid">
+      <div class="pd-visual">
+        <div class="pd-label">
+          <div class="pdl-logo">She<i>Glow</i></div>
+          <div class="pdl-line"></div>
+          <div class="pdl-name">GlowHair</div>
+          <div class="pdl-promise">Cabelo forte &middot; Pele luminosa<br>Unhas resistentes</div>
+          <div class="pdl-div"></div>
+          <div class="pdl-format">60 capsulas vegetais &middot; 30 dias</div>
+          <div class="pdl-badges"><span class="pdl-badge">Sem gluten</span><span class="pdl-badge">Vegano</span></div>
+        </div>
+      </div>
+      <div class="pd-content">
+        <div class="pd-ey">Glow Essentials</div>
+        <div class="pd-title">Glow<i>Hair</i></div>
+        <div class="pd-tagline">Cabelo que para de cair e volta a brilhar</div>
+        <div class="pd-quote">"Achei baby hairs no espelho no segundo mes. Minhas unhas pararam de quebrar antes disso."</div>
+        <div class="pd-what">
+          <h4>O que voce vai sentir</h4>
+          <p>Menos cabelo no ralo em 30 dias. Unhas mais fortes em 45 dias. Baby hairs e volume visivel a partir de 90 dias de uso continuo.</p>
+        </div>
+        <div class="pd-results">
+          <div class="pd-res"><strong>30d</strong><span>Menos queda</span></div>
+          <div class="pd-res"><strong>45d</strong><span>Unhas fortes</span></div>
+          <div class="pd-res"><strong>90d</strong><span>Volume visivel</span></div>
+        </div>
+        <div class="pd-badges">
+          <span class="pd-badge">Sem gluten</span><span class="pd-badge">Sem lactose</span>
+          <span class="pd-badge">Vegano</span><span class="pd-badge">Sem corantes</span>
+        </div>
+        <div class="pd-pricing">
+          <div><div class="pd-price-main"><strong>R$ 149,90</strong><small> /mes</small></div>
+          <div class="pd-price-sub">Assinatura: R$ 127,40/mes (15% OFF)</div></div>
+          <button class="pd-cta">Comprar &rarr;</button>
+        </div>
+      </div>
+    </div>
+    <div class="pd-back">
+      <div class="pdb-col"><h5>Como usar</h5><p>Tomar 2 capsulas ao dia com a principal refeicao. Manter uso continuo por no minimo 90 dias para resultado pleno.</p><p class="pdb-warn">Gestantes e nutrizes: consultar medico ou nutricionista.</p></div>
+      <div class="pdb-col"><h5>Para quem e</h5><p>Mulheres 30+ que notam queda de cabelo, unhas fracas ou pele sem brilho. Especialmente eficaz apos periodos de estresse ou mudancas hormonais.</p></div>
+      <div class="pdb-col"><h5>Informacoes</h5><p>Suplemento alimentar &middot; 60 capsulas vegetais &middot; Este produto nao e um medicamento &middot; Notificacao ANVISA</p><p style="margin-top:.6rem;font-size:.7rem;color:var(--soft)">QR code no rotulo: certificado de analise do lote</p></div>
+    </div>
+  </div>
+
+  <!-- ══ DETAIL: GLOWSKIN ══ -->
+  <div class="product-detail pd-skin" id="detail-skin">
+    <button class="back-btn" onclick="showGrid()">&larr; Voltar para todos</button>
+    <div class="pd-grid">
+      <div class="pd-visual">
+        <div class="pd-label">
+          <div class="pdl-logo">She<i>Glow</i></div><div class="pdl-line"></div>
+          <div class="pdl-name">GlowSkin</div>
+          <div class="pdl-promise">Pele renovada &middot; Articulacoes<br>saudaveis</div>
+          <div class="pdl-div"></div><div class="pdl-format">567g &middot; 28 doses &middot; Powder</div>
+          <div class="pdl-badges"><span class="pdl-badge">Grassfed</span><span class="pdl-badge">Sem sabor</span></div>
+        </div>
+      </div>
+      <div class="pd-content">
+        <div class="pd-ey">Glow Essentials</div>
+        <div class="pd-title">Glow<i>Skin</i></div>
+        <div class="pd-tagline">Pele firme e aquele glow natural de volta</div>
+        <div class="pd-quote">"Minha pele voltou a ter luminosidade. As linhas finas ao redor dos olhos suavizaram visivelmente."</div>
+        <div class="pd-what"><h4>O que voce vai sentir</h4><p>Pele mais hidratada em 2 semanas. Firmeza e elasticidade visiveis a partir de 60 dias. Menos dor articular em 30 dias.</p></div>
+        <div class="pd-results">
+          <div class="pd-res"><strong>14d</strong><span>Hidratacao</span></div>
+          <div class="pd-res"><strong>30d</strong><span>Articulacoes</span></div>
+          <div class="pd-res"><strong>60d</strong><span>Firmeza visivel</span></div>
+        </div>
+        <div class="pd-badges"><span class="pd-badge">Grassfed</span><span class="pd-badge">Sem sabor</span><span class="pd-badge">Sem gluten</span><span class="pd-badge">20g/dose</span></div>
+        <div class="pd-pricing">
+          <div><div class="pd-price-main"><strong>R$ 189,90</strong><small> /mes</small></div>
+          <div class="pd-price-sub">Assinatura: R$ 161,40/mes (15% OFF)</div></div>
+          <button class="pd-cta">Comprar &rarr;</button>
+        </div>
+      </div>
+    </div>
+    <div class="pd-back">
+      <div class="pdb-col"><h5>Como usar</h5><p>Dissolver 1 medida (20g) em 200ml de agua, suco ou smoothie. Tomar 1 vez ao dia pela manha.</p></div>
+      <div class="pdb-col"><h5>Para quem e</h5><p>Mulheres que buscam pele mais firme, reducao de linhas finas e articulacoes saudaveis. Ideal para misturar no cafe ou smoothie matinal.</p></div>
+      <div class="pdb-col"><h5>Informacoes</h5><p>Suplemento alimentar &middot; 567g po &middot; Colageno hidrolisado bio-peptideos &middot; Este produto nao e um medicamento</p></div>
+    </div>
+  </div>
+
+  <!-- ══ DETAIL: GLOWFOCUS ══ -->
+  <div class="product-detail pd-focus" id="detail-focus">
+    <button class="back-btn" onclick="showGrid()">&larr; Voltar para todos</button>
+    <div class="pd-grid">
+      <div class="pd-visual">
+        <div class="pd-label">
+          <div class="pdl-logo">She<i>Glow</i></div><div class="pdl-line"></div>
+          <div class="pdl-name">GlowFocus</div>
+          <div class="pdl-promise">Clareza mental &middot; Foco<br>Calma</div>
+          <div class="pdl-div"></div><div class="pdl-format">60 capsulas vegetais &middot; 30 dias</div>
+          <div class="pdl-badges"><span class="pdl-badge">6-em-1</span><span class="pdl-badge">1000mg</span></div>
+        </div>
+      </div>
+      <div class="pd-content">
+        <div class="pd-ey">Glow Essentials</div>
+        <div class="pd-title">Glow<i>Focus</i></div>
+        <div class="pd-tagline">Clareza mental e adeus brain fog</div>
+        <div class="pd-quote">"Consigo focar por horas sem aquela nevoa mental. Durmo melhor tambem — acordo descansada de verdade."</div>
+        <div class="pd-what"><h4>O que voce vai sentir</h4><p>Sono mais profundo em 7 dias. Menos ansiedade em 14 dias. Foco sustentado e clareza mental a partir de 30 dias.</p></div>
+        <div class="pd-results">
+          <div class="pd-res"><strong>7d</strong><span>Sono profundo</span></div>
+          <div class="pd-res"><strong>14d</strong><span>Menos ansiedade</span></div>
+          <div class="pd-res"><strong>30d</strong><span>Foco pleno</span></div>
+        </div>
+        <div class="pd-badges"><span class="pd-badge">Sem gluten</span><span class="pd-badge">Sem lactose</span><span class="pd-badge">Vegano</span><span class="pd-badge">6 formas</span></div>
+        <div class="pd-pricing">
+          <div><div class="pd-price-main"><strong>R$ 129,90</strong><small> /mes</small></div>
+          <div class="pd-price-sub">Assinatura: R$ 110,40/mes (15% OFF)</div></div>
+          <button class="pd-cta">Comprar &rarr;</button>
+        </div>
+      </div>
+    </div>
+    <div class="pd-back">
+      <div class="pdb-col"><h5>Como usar</h5><p>Tomar 2 capsulas a noite, antes de dormir. O efeito relaxante favorece o sono de qualidade.</p></div>
+      <div class="pdb-col"><h5>Para quem e</h5><p>Mulheres que sofrem com brain fog, dificuldade de concentracao, ansiedade ou insonia. Inclui L-Treonina para funcao cerebral otimizada.</p></div>
+      <div class="pdb-col"><h5>Informacoes</h5><p>Suplemento alimentar &middot; 60 capsulas vegetais &middot; 6 formas de magnesio &middot; Este produto nao e um medicamento</p></div>
+    </div>
+  </div>
+
+  <!-- ══ DETAIL: GLOWSHIELD ══ -->
+  <div class="product-detail pd-shield" id="detail-shield">
+    <button class="back-btn" onclick="showGrid()">&larr; Voltar para todos</button>
+    <div class="pd-grid">
+      <div class="pd-visual">
+        <div class="pd-label">
+          <div class="pdl-logo">She<i>Glow</i></div><div class="pdl-line"></div>
+          <div class="pdl-name">GlowShield</div>
+          <div class="pdl-promise">Imunidade &middot; Ossos<br>Disposicao</div>
+          <div class="pdl-div"></div><div class="pdl-format">60 comprimidos &middot; 30 dias</div>
+          <div class="pdl-badges"><span class="pdl-badge">D3+K2</span><span class="pdl-badge">Mastigavel</span></div>
+        </div>
+      </div>
+      <div class="pd-content">
+        <div class="pd-ey">Glow Essentials</div>
+        <div class="pd-title">Glow<i>Shield</i></div>
+        <div class="pd-tagline">Imunidade blindada e ossos fortes</div>
+        <div class="pd-quote">"Nao peguei nem um resfriado esse inverno. E minha disposicao voltou a ser como antes dos 30."</div>
+        <div class="pd-what"><h4>O que voce vai sentir</h4><p>Mais disposicao em 2 semanas. Menos gripes e resfriados. Protecao ossea a longo prazo — essencial apos os 30.</p></div>
+        <div class="pd-results">
+          <div class="pd-res"><strong>14d</strong><span>Mais energia</span></div>
+          <div class="pd-res"><strong>30d</strong><span>Imunidade</span></div>
+          <div class="pd-res"><strong>90d</strong><span>Ossos fortes</span></div>
+        </div>
+        <div class="pd-badges"><span class="pd-badge">Sem gluten</span><span class="pd-badge">Sem lactose</span><span class="pd-badge">Mastigavel</span></div>
+        <div class="pd-pricing">
+          <div><div class="pd-price-main"><strong>R$ 89,90</strong><small> /mes</small></div>
+          <div class="pd-price-sub">Assinatura: R$ 76,40/mes (15% OFF)</div></div>
+          <button class="pd-cta">Comprar &rarr;</button>
+        </div>
+      </div>
+    </div>
+    <div class="pd-back">
+      <div class="pdb-col"><h5>Como usar</h5><p>Tomar 2 comprimidos ao dia durante as refeicoes. Pode ser mastigado.</p></div>
+      <div class="pdb-col"><h5>Para quem e</h5><p>Mulheres 30+ com deficiencia de vitamina D (40-60% das brasileiras), preocupacao com saude ossea ou imunidade baixa.</p></div>
+      <div class="pdb-col"><h5>Informacoes</h5><p>Suplemento alimentar &middot; 60 comprimidos &middot; Triplice vitaminica &middot; Este produto nao e um medicamento</p></div>
+    </div>
+  </div>
+
+  <!-- ══ DETAIL: GLOWENERGY ══ -->
+  <div class="product-detail pd-energy" id="detail-energy">
+    <button class="back-btn" onclick="showGrid()">&larr; Voltar para todos</button>
+    <div class="pd-grid">
+      <div class="pd-visual">
+        <div class="pd-label">
+          <div class="pdl-logo">She<i>Glow</i></div><div class="pdl-line"></div>
+          <div class="pdl-name">GlowEnergy</div>
+          <div class="pdl-promise">Energia pura &middot; Visao<br>Protecao celular</div>
+          <div class="pdl-div"></div><div class="pdl-format">60 capsulas vegetais &middot; 30 dias</div>
+          <div class="pdl-badges"><span class="pdl-badge">97% puro</span><span class="pdl-badge">5-em-1</span></div>
+        </div>
+      </div>
+      <div class="pd-content">
+        <div class="pd-ey">Glow Essentials</div>
+        <div class="pd-title">Glow<i>Energy</i></div>
+        <div class="pd-tagline">Energia o dia inteiro, sem cafe</div>
+        <div class="pd-quote">"Larguei o terceiro cafe da tarde sem sentir falta. Minha energia e constante, sem picos nem crashes."</div>
+        <div class="pd-what"><h4>O que voce vai sentir</h4><p>Mais disposicao ao acordar em 7 dias. Energia constante sem estimulantes. Visao mais nitida com o uso continuo.</p></div>
+        <div class="pd-results">
+          <div class="pd-res"><strong>7d</strong><span>Disposicao</span></div>
+          <div class="pd-res"><strong>14d</strong><span>Sem crashes</span></div>
+          <div class="pd-res"><strong>30d</strong><span>Energia plena</span></div>
+        </div>
+        <div class="pd-badges"><span class="pd-badge">Sem gluten</span><span class="pd-badge">Sem cafeina</span><span class="pd-badge">Vegano</span><span class="pd-badge">5-em-1</span></div>
+        <div class="pd-pricing">
+          <div><div class="pd-price-main"><strong>R$ 159,90</strong><small> /mes</small></div>
+          <div class="pd-price-sub">Assinatura: R$ 135,90/mes (15% OFF)</div></div>
+          <button class="pd-cta">Comprar &rarr;</button>
+        </div>
+      </div>
+    </div>
+    <div class="pd-back">
+      <div class="pdb-col"><h5>Como usar</h5><p>Tomar 2 capsulas ao dia com cafe da manha ou almoco. Pode ser combinado com GlowFocus ou GlowShield.</p></div>
+      <div class="pdb-col"><h5>Para quem e</h5><p>Mulheres que sentem cansaco cronico, dependem de cafe ou querem energia sustentada sem estimulantes artificiais.</p></div>
+      <div class="pdb-col"><h5>Informacoes</h5><p>Suplemento alimentar &middot; 60 capsulas vegetais &middot; 5 ativos combinados &middot; Este produto nao e um medicamento</p></div>
+    </div>
+  </div>
+
+  <script>
+    function showProduct(id){
+      document.getElementById('grid-section').style.display='none';
+      document.getElementById('hero-section').style.display='none';
+      document.querySelectorAll('.product-detail').forEach(d=>d.classList.remove('active'));
+      document.getElementById('detail-'+id).classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function showGrid(){
+      document.querySelectorAll('.product-detail').forEach(d=>d.classList.remove('active'));
+      document.getElementById('grid-section').style.display='';
+      document.getElementById('hero-section').style.display='';
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  </script>
+
+</body>
+</html>
