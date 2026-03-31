@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SheGlow — Brand Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --rose:#C4929A;--rose-light:#F2DDE0;--rose-pale:#FBF2F3;
+      --gold:#BFA15E;--gold-light:#E8D9B0;
+      --sage:#8FA888;--sage-light:#E3EBE0;
+      --lavender:#9E8FB8;--lavender-light:#E8E2F0;
+      --blue:#6BA8B8;--amber:#D4A040;
+      --cream:#FDFBF8;--warm:#F8F5F1;
+      --text:#1C1C1C;--mid:#555;--soft:#999;--border:rgba(0,0,0,.06);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);-webkit-font-smoothing:antialiased}
+
+    /* NAV */
+    .bb-nav{position:sticky;top:0;z-index:50;background:rgba(253,251,248,.92);backdrop-filter:blur(30px);
+      border-bottom:1px solid var(--border);padding:.8rem 3rem;display:flex;justify-content:space-between;align-items:center}
+    .bb-nav .logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600}
+    .bb-nav .logo i{font-style:italic;color:var(--rose)}
+    .bb-nav span{font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+    .bb-toc{display:flex;gap:1.2rem;align-items:center}
+    .bb-toc a{text-decoration:none;font-size:.68rem;font-weight:500;color:var(--soft);transition:color .3s}
+    .bb-toc a:hover{color:var(--text)}
+
+    /* LAYOUT */
+    .section{padding:5rem 0;border-bottom:1px solid var(--border)}
+    .section:last-of-type{border-bottom:none}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 3rem}
+    .s-number{font-family:'DM Mono',monospace;font-size:.65rem;font-weight:500;color:var(--soft);letter-spacing:.1em;margin-bottom:.5rem}
+    .s-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;margin-bottom:2rem}
+    .s-title em{font-style:italic;color:var(--rose)}
+
+    /* HERO */
+    .bb-hero{padding:6rem 0 5rem;text-align:center;background:linear-gradient(180deg,var(--cream),var(--rose-pale),var(--cream));position:relative;overflow:hidden}
+    .bb-hero .logo-big{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);font-weight:600;margin-bottom:.3rem}
+    .bb-hero .logo-big i{font-style:italic;color:var(--rose)}
+    .bb-hero .tagline{font-size:1.1rem;color:var(--mid);font-style:italic;margin-bottom:.5rem}
+    .bb-hero .label{font-size:.6rem;font-weight:600;letter-spacing:.35em;text-transform:uppercase;color:var(--rose);margin-top:1.5rem;
+      display:inline-block;border:1px solid var(--rose-light);padding:.4rem 1.2rem;border-radius:100px}
+    .bb-hero .year{font-size:.7rem;color:var(--soft);margin-top:1.5rem}
+
+    /* MANIFESTO */
+    .manifesto{max-width:650px;margin:0 auto}
+    .manifesto blockquote{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:400;line-height:1.8;color:var(--mid);
+      border-left:3px solid var(--rose-light);padding-left:1.5rem;margin:0}
+    .manifesto blockquote strong{color:var(--text);font-weight:600}
+
+    /* GRID HELPERS */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem}
+    .grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem}
+
+    /* CARDS */
+    .card{background:white;border:1px solid var(--border);border-radius:16px;padding:1.8rem;transition:all .3s}
+    .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.04);transform:translateY(-2px)}
+    .card h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:500;margin-bottom:.5rem}
+    .card p{font-size:.82rem;color:var(--mid);line-height:1.65}
+    .card-icon{font-size:1.5rem;margin-bottom:.8rem}
+
+    /* COLOR SWATCHES */
+    .swatches{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+    .swatch{flex:1;min-width:150px;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:white}
+    .swatch-color{height:90px}
+    .swatch-info{padding:.8rem 1rem}
+    .swatch-name{font-size:.78rem;font-weight:600;margin-bottom:.15rem}
+    .swatch-hex{font-family:'DM Mono',monospace;font-size:.68rem;color:var(--soft)}
+    .swatch-use{font-size:.65rem;color:var(--soft);margin-top:.3rem;line-height:1.4}
+
+    /* GRADIENTS */
+    .gradient-row{display:flex;gap:1rem;margin-bottom:1rem}
+    .gradient-item{flex:1;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+    .gradient-bar{height:50px}
+    .gradient-label{padding:.5rem .8rem;background:white;font-size:.68rem;font-weight:600}
+
+    /* TYPOGRAPHY SHOWCASE */
+    .type-showcase{margin-bottom:2rem}
+    .type-row{display:flex;align-items:baseline;gap:2rem;padding:1.2rem 0;border-bottom:1px solid var(--border)}
+    .type-label{width:140px;flex-shrink:0;font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--soft)}
+    .type-example{flex:1}
+
+    /* LOGO DISPLAY */
+    .logo-display{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+    .logo-box{padding:3rem;border-radius:16px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border)}
+    .logo-box .show-logo{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600}
+    .logo-box .show-logo i{font-style:italic}
+    .logo-light{background:var(--cream)}
+    .logo-light .show-logo{color:var(--text)}
+    .logo-light .show-logo i{color:var(--rose)}
+    .logo-dark{background:var(--text)}
+    .logo-dark .show-logo{color:white}
+    .logo-dark .show-logo i{color:var(--rose)}
+
+    /* TABLE */
+    .bb-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.82rem}
+    .bb-table th{text-align:left;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);
+      padding:.8rem 1rem;border-bottom:2px solid var(--border)}
+    .bb-table td{padding:.7rem 1rem;border-bottom:1px solid var(--border);color:var(--mid);vertical-align:top}
+    .bb-table td:first-child{font-weight:500;color:var(--text)}
+    .bb-table tr:last-child td{border-bottom:none}
+
+    /* VOICE EXAMPLES */
+    .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .voice-box{border-radius:14px;padding:1.5rem}
+    .voice-do{background:#f0f5f0;border:1px solid rgba(143,168,136,.2)}
+    .voice-dont{background:#fdf0f0;border:1px solid rgba(196,146,154,.2)}
+    .voice-box h5{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.8rem}
+    .voice-do h5{color:var(--sage)}
+    .voice-dont h5{color:var(--rose)}
+    .voice-box ul{list-style:none}
+    .voice-box li{font-size:.82rem;color:var(--mid);padding:.4rem 0;line-height:1.5;font-style:italic}
+
+    /* PERSONA */
+    .persona{background:white;border:1px solid var(--border);border-radius:16px;padding:1.8rem;margin-bottom:1rem}
+    .persona-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.8rem}
+    .persona h4{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:500}
+    .persona-age{font-size:.7rem;color:var(--soft);font-weight:500}
+    .persona p{font-size:.82rem;color:var(--mid);line-height:1.6}
+    .persona-tags{display:flex;gap:.4rem;margin-top:.8rem;flex-wrap:wrap}
+    .persona-tag{font-size:.6rem;font-weight:500;padding:.3rem .7rem;border-radius:100px;border:1px solid var(--border);color:var(--soft)}
+
+    /* PRODUCT TREE */
+    .tree{font-family:'DM Mono',monospace;font-size:.78rem;line-height:2;color:var(--mid);background:white;border:1px solid var(--border);
+      border-radius:16px;padding:2rem;margin:1.5rem 0}
+    .tree strong{color:var(--text);font-family:'Inter',sans-serif}
+    .t-rose{color:var(--rose)}
+    .t-sage{color:var(--sage)}
+    .t-lavender{color:var(--lavender)}
+    .t-gold{color:var(--gold)}
+
+    /* RULES */
+    .rules{counter-reset:rule}
+    .rule{display:flex;gap:1.2rem;padding:1rem 0;border-bottom:1px solid var(--border);align-items:baseline}
+    .rule:last-child{border-bottom:none}
+    .rule::before{counter-increment:rule;content:counter(rule,decimal-leading-zero);font-family:'DM Mono',monospace;font-size:.7rem;color:var(--rose);
+      flex-shrink:0;width:24px}
+    .rule p{font-size:.85rem;color:var(--mid);line-height:1.5}
+    .rule strong{color:var(--text)}
+
+    /* TIMELINE */
+    .timeline{position:relative;padding-left:2rem;margin:1.5rem 0}
+    .timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:var(--rose-light)}
+    .tl-item{position:relative;padding-bottom:2rem}
+    .tl-item::before{content:'';position:absolute;left:-2rem;top:4px;width:14px;height:14px;border-radius:50%;border:2px solid var(--rose);background:white}
+    .tl-item h4{font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;margin-bottom:.3rem}
+    .tl-item p{font-size:.82rem;color:var(--mid);line-height:1.6}
+
+    /* PHOTO GRID */
+    .photo-rules{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+    .photo-col h5{font-size:.62rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.8rem}
+    .photo-col ul{list-style:none}
+    .photo-col li{font-size:.82rem;color:var(--mid);padding:.35rem 0;padding-left:1.2rem;position:relative;line-height:1.5}
+    .photo-col li::before{position:absolute;left:0;font-size:.7rem}
+    .photo-do li::before{content:'\2713';color:var(--sage)}
+    .photo-dont li::before{content:'\2717';color:var(--rose)}
+
+    /* SUB HEADING */
+    .sub-h{font-size:.62rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--soft);margin-bottom:1rem;margin-top:2.5rem}
+    .desc{font-size:.88rem;color:var(--mid);line-height:1.7;margin-bottom:1.5rem;max-width:600px}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .wrap{padding:0 1.5rem}
+      .bb-nav{padding:.8rem 1.5rem}
+      .bb-toc{display:none}
+      .grid-2,.grid-3,.grid-4,.voice-grid,.photo-rules,.logo-display{grid-template-columns:1fr}
+      .swatches{flex-direction:column}
+      .type-row{flex-direction:column;gap:.5rem}
+      .type-label{width:auto}
+      .gradient-row{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bb-nav">
+    <div class="logo">She<i>Glow</i> <span style="margin-left:.8rem">Brand Book</span></div>
+    <div class="bb-toc">
+      <a href="#marca">Marca</a>
+      <a href="#posicionamento">Posicionamento</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#visual">Visual</a>
+      <a href="#voz">Voz</a>
+      <a href="#embalagem">Embalagem</a>
+      <a href="#social">Social</a>
+      <a href="#regras">Regras</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="bb-hero">
+    <div class="logo-big">She<i>Glow</i></div>
+    <div class="tagline">Cada fase, um brilho.</div>
+    <div class="label">Brand Book 2026</div>
+    <div class="year">Documento confidencial &middot; Uso interno e parceiros</div>
+  </div>
+
+  <!-- 01 MARCA -->
+  <div class="section" id="marca">
+    <div class="wrap">
+      <div class="s-number">01</div>
+      <div class="s-title">A <em>Marca</em></div>
+
+      <div class="sub-h">Nome</div>
+      <p class="desc"><strong>SheGlow</strong> — She (ela) + Glow (brilho). O brilho que vem de dentro quando o corpo esta em equilibrio.</p>
+
+      <div class="sub-h">Manifesto</div>
+      <div class="manifesto">
+        <blockquote>
+          Seu corpo muda. Seu suplemento tambem deveria.<br><br>
+          Voce nao e a mesma mulher que era aos 20. Seu ciclo, sua energia, sua pele, sua mente — tudo evolui. Entao por que o mercado insiste em te vender a mesma formula generica?<br><br>
+          SheGlow nasceu de uma recusa: a recusa de aceitar que wellness feminino e uma capsula identica para todas. Nos entendemos que o corpo feminino <strong>cicla, gesta, transiciona e se renova</strong>. E que cada uma dessas fases merece suporte preciso.<br><br>
+          Nao vendemos ingredientes. Vendemos a <strong>transformacao</strong> que voce sente no espelho, no foco, na disposicao, na confianca.<br><br>
+          Somos a primeira marca brasileira de wellness que acompanha as fases da sua vida.<br><br>
+          <strong>SheGlow. Cada fase, um brilho.</strong>
+        </blockquote>
+      </div>
+
+      <div class="sub-h" style="margin-top:3rem">Pilares</div>
+      <div class="grid-4">
+        <div class="card"><div class="card-icon">&#127793;</div><h4>Fases, nao formulas</h4><p>O produto se adapta a voce. Nunca lideramos com ingrediente — lideramos com a transformacao.</p></div>
+        <div class="card"><div class="card-icon">&#128300;</div><h4>Ciencia acessivel</h4><p>Rigor sem ser intimidadora. A mulher entende POR QUE esta tomando, nao so O QUE.</p></div>
+        <div class="card"><div class="card-icon">&#128172;</div><h4>Coragem para falar</h4><p>Ciclo, TPM, perimenopausa, fogachos — falamos abertamente sobre o que o mercado trata como tabu.</p></div>
+        <div class="card"><div class="card-icon">&#129309;</div><h4>Comunidade real</h4><p>Mulheres compartilhando suas fases sem filtro. Nao e sobre a marca — e sobre elas.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 POSICIONAMENTO -->
+  <div class="section" id="posicionamento">
+    <div class="wrap">
+      <div class="s-number">02</div>
+      <div class="s-title"><em>Posicionamento</em></div>
+
+      <div class="sub-h">Categoria criada</div>
+      <p class="desc" style="font-size:1.1rem;font-weight:500;color:var(--text)">Wellness por fase de vida feminina</p>
+      <p class="desc">A primeira marca brasileira que adapta suplementacao as fases hormonais e de vida da mulher — ciclo menstrual, gestacao, menopausa.</p>
+
+      <div class="sub-h">Comparativo competitivo</div>
+      <table class="bb-table">
+        <thead><tr><th></th><th>SheGlow</th><th>Puravida</th><th>Essential</th><th>AlwaysFit</th></tr></thead>
+        <tbody>
+          <tr><td>Foco</td><td style="color:var(--rose);font-weight:600">Fases da vida feminina</td><td>Alimentacao natural</td><td>Biodisponibilidade</td><td>Performance</td></tr>
+          <tr><td>Tom</td><td style="color:var(--rose);font-weight:600">Intimo, corajoso</td><td>Educativo</td><td>Cientifico, frio</td><td>Clinico, masculino</td></tr>
+          <tr><td>Publico</td><td style="color:var(--rose);font-weight:600">Mulheres 30+</td><td>Todos</td><td>Todos</td><td>Todos</td></tr>
+          <tr><td>Moat</td><td style="color:var(--rose);font-weight:600">Produtos por fase</td><td>Portfolio amplo</td><td>Formas bioativas</td><td>Dr. Barakat</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sub-h">Publico-alvo</div>
+      <div class="persona">
+        <div class="persona-header"><h4>"A Protagonista"</h4><span class="persona-age">30 — 42 anos</span></div>
+        <p>Profissional ativa, urbana, renda B+/A. Sente queda de cabelo, brain fog, cansaco. Pesquisa antes de comprar, le rotulos.</p>
+        <div class="persona-tags"><span class="persona-tag">GlowHair</span><span class="persona-tag">GlowFocus</span><span class="persona-tag">→ GlowCycle</span></div>
+      </div>
+      <div class="persona">
+        <div class="persona-header"><h4>"A Criadora"</h4><span class="persona-age">28 — 38 anos</span></div>
+        <p>Gestante ou pos-parto. Busca seguranca cientifica para ela e o bebe. Nao aceita formula generica de "pre-natal".</p>
+        <div class="persona-tags"><span class="persona-tag">GlowMama</span><span class="persona-tag">→ GlowSkin</span><span class="persona-tag">→ GlowShield</span></div>
+      </div>
+      <div class="persona">
+        <div class="persona-header"><h4>"A Renascida"</h4><span class="persona-age">42 — 58 anos</span></div>
+        <p>Perimenopausa, fogachos, mudancas hormonais. Mercado virgem no Brasil — ninguem fala com ela.</p>
+        <div class="persona-tags"><span class="persona-tag">GlowPrime</span><span class="persona-tag">→ GlowFocus</span><span class="persona-tag">→ GlowEnergy</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 PRODUTOS -->
+  <div class="section" id="produtos">
+    <div class="wrap">
+      <div class="s-number">03</div>
+      <div class="s-title">Arquitetura de <em>Produtos</em></div>
+
+      <div class="tree">
+        <strong>SheGlow</strong><br>
+        │<br>
+        ├── <strong>GLOW ESSENTIALS</strong> <span style="color:var(--soft)">(Linha base — gera caixa)</span><br>
+        │&nbsp;&nbsp;&nbsp;├── <span class="t-rose">GlowHair</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cabelo, pele, unhas<br>
+        │&nbsp;&nbsp;&nbsp;├── <span style="color:var(--blue)">GlowSkin</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Colageno, firmeza<br>
+        │&nbsp;&nbsp;&nbsp;├── <span class="t-gold">GlowFocus</span>&nbsp;&nbsp;&nbsp;&nbsp;Clareza mental, foco<br>
+        │&nbsp;&nbsp;&nbsp;├── <span style="color:var(--amber)">GlowShield</span>&nbsp;&nbsp;&nbsp;Imunidade, ossos<br>
+        │&nbsp;&nbsp;&nbsp;└── <span class="t-sage">GlowEnergy</span>&nbsp;&nbsp;&nbsp;Energia sustentada<br>
+        │<br>
+        ├── <strong>GLOW PHASES</strong> <span style="color:var(--soft)">(Diferencial — moat competitivo)</span><br>
+        │&nbsp;&nbsp;&nbsp;├── <span class="t-sage">GlowCycle</span>&nbsp;&nbsp;&nbsp;&nbsp;Ciclo menstrual<br>
+        │&nbsp;&nbsp;&nbsp;├── <span class="t-rose">GlowMama</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gestacao e pos-parto<br>
+        │&nbsp;&nbsp;&nbsp;└── <span class="t-lavender">GlowPrime</span>&nbsp;&nbsp;&nbsp;&nbsp;Perimenopausa<br>
+        │<br>
+        └── <strong>GLOW RITUALS</strong> <span style="color:var(--soft)">(Futuro — experiencia)</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;├── GlowMorning&nbsp;&nbsp;&nbsp;Sache matinal<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;└── GlowNight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gummies noturnos
+      </div>
+
+      <div class="sub-h">Regra de naming</div>
+      <p class="desc">Sempre <strong>Glow + transformacao</strong>. Nunca nome de ingrediente.</p>
+      <div class="voice-grid">
+        <div class="voice-box voice-do"><h5>Certo</h5><ul><li>GlowFocus</li><li>GlowCycle</li><li>GlowPrime</li><li>GlowShield</li></ul></div>
+        <div class="voice-box voice-dont"><h5>Errado</h5><ul><li>MagGlow</li><li>CollaGlow</li><li>OmegaGlow</li><li>BiotinGlow</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 IDENTIDADE VISUAL -->
+  <div class="section" id="visual">
+    <div class="wrap">
+      <div class="s-number">04</div>
+      <div class="s-title">Identidade <em>Visual</em></div>
+
+      <div class="sub-h">Cores institucionais</div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:var(--rose)"></div><div class="swatch-info"><div class="swatch-name">Rose</div><div class="swatch-hex">#C4929A</div><div class="swatch-use">Cor primaria. Logo, destaques, CTAs</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--text)"></div><div class="swatch-info"><div class="swatch-name">Grafite</div><div class="swatch-hex">#1C1C1C</div><div class="swatch-use">Texto principal, fundos escuros, botoes</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--cream);border-bottom:1px solid var(--border)"></div><div class="swatch-info"><div class="swatch-name">Cream</div><div class="swatch-hex">#FDFBF8</div><div class="swatch-use">Fundo principal</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--warm);border-bottom:1px solid var(--border)"></div><div class="swatch-info"><div class="swatch-name">Warm White</div><div class="swatch-hex">#F8F5F1</div><div class="swatch-use">Fundo secundario, cards</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--gold)"></div><div class="swatch-info"><div class="swatch-name">Gold</div><div class="swatch-hex">#BFA15E</div><div class="swatch-use">Acentos premium, selos</div></div></div>
+      </div>
+
+      <div class="sub-h">Cores por produto</div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-color" style="background:var(--rose)"></div><div class="swatch-info"><div class="swatch-name">GlowHair</div><div class="swatch-hex">#C4929A</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--blue)"></div><div class="swatch-info"><div class="swatch-name">GlowSkin</div><div class="swatch-hex">#6BA8B8</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--gold)"></div><div class="swatch-info"><div class="swatch-name">GlowFocus</div><div class="swatch-hex">#BFA15E</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--amber)"></div><div class="swatch-info"><div class="swatch-name">GlowShield</div><div class="swatch-hex">#D4A040</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--sage)"></div><div class="swatch-info"><div class="swatch-name">GlowEnergy</div><div class="swatch-hex">#8FA888</div></div></div>
+      </div>
+
+      <div class="sub-h">Cores por fase</div>
+      <div class="swatches" style="max-width:600px">
+        <div class="swatch"><div class="swatch-color" style="background:var(--sage)"></div><div class="swatch-info"><div class="swatch-name">GlowCycle</div><div class="swatch-hex">#8FA888</div><div class="swatch-use">Ciclo, natureza, renovacao</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--rose)"></div><div class="swatch-info"><div class="swatch-name">GlowMama</div><div class="swatch-hex">#C4929A</div><div class="swatch-use">Maternidade, acolhimento</div></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:var(--lavender)"></div><div class="swatch-info"><div class="swatch-name">GlowPrime</div><div class="swatch-hex">#9E8FB8</div><div class="swatch-use">Sabedoria, poder, transicao</div></div></div>
+      </div>
+
+      <div class="sub-h">Gradientes por produto</div>
+      <div class="gradient-row">
+        <div class="gradient-item"><div class="gradient-bar" style="background:linear-gradient(90deg,#FAF0EF,#F2DDE0,#E8CFC8)"></div><div class="gradient-label">GlowHair</div></div>
+        <div class="gradient-item"><div class="gradient-bar" style="background:linear-gradient(90deg,#EFF6F8,#D4E8EE,#B8D8E4)"></div><div class="gradient-label">GlowSkin</div></div>
+        <div class="gradient-item"><div class="gradient-bar" style="background:linear-gradient(90deg,#F8F4EC,#EDE4D0,#DDD0B0)"></div><div class="gradient-label">GlowFocus</div></div>
+      </div>
+      <div class="gradient-row">
+        <div class="gradient-item"><div class="gradient-bar" style="background:linear-gradient(90deg,#FDF6E8,#F5E6C4,#E8D4A0)"></div><div class="gradient-label">GlowShield</div></div>
+        <div class="gradient-item"><div class="gradient-bar" style="background:linear-gradient(90deg,#F0F5F0,#DCE8DC,#C4D8C4)"></div><div class="gradient-label">GlowEnergy</div></div>
+      </div>
+
+      <div class="sub-h">Logo</div>
+      <div class="logo-display">
+        <div class="logo-box logo-light"><div class="show-logo">She<i>Glow</i></div></div>
+        <div class="logo-box logo-dark"><div class="show-logo">She<i>Glow</i></div></div>
+      </div>
+      <p class="desc"><strong>Regras:</strong> Sempre em uma linha. Espaco minimo ao redor: altura da letra "S". Nunca alterar cores, fontes ou proporcoes. Tamanho minimo digital: 80px.</p>
+
+      <div class="sub-h">Tipografia</div>
+      <div class="type-showcase">
+        <div class="type-row">
+          <div class="type-label">Logo / Titulos</div>
+          <div class="type-example" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400">Playfair Display — <em style="font-style:italic;color:var(--rose)">italico para destaque</em></div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Eyebrows</div>
+          <div class="type-example" style="font-size:.65rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--soft)">Inter 600 &middot; Uppercase &middot; Letter-spacing 0.3em</div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Corpo</div>
+          <div class="type-example" style="font-size:.88rem;color:var(--mid);line-height:1.7">Inter 400 — Corpo de texto com line-height 1.7 para leitura confortavel.</div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Depoimentos</div>
+          <div class="type-example" style="font-size:.88rem;color:var(--soft);font-style:italic">"Achei baby hairs no espelho no segundo mes."</div>
+        </div>
+        <div class="type-row">
+          <div class="type-label">Dados / Mono</div>
+          <div class="type-example" style="font-family:'DM Mono',monospace;font-size:.82rem;color:var(--mid)">DM Mono 400 — #C4929A — 60 capsulas — R$ 149,90</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 TOM DE VOZ -->
+  <div class="section" id="voz">
+    <div class="wrap">
+      <div class="s-number">05</div>
+      <div class="s-title">Tom de <em>Voz</em></div>
+
+      <p class="desc">Se SheGlow fosse uma pessoa, seria sua <strong>amiga que e nutricionista</strong> — sabe de ciencia, mas conversa com voce tomando cafe. Nunca condescendente, nunca fria.</p>
+
+      <div class="sub-h">Atributos</div>
+      <table class="bb-table">
+        <thead><tr><th>Somos</th><th>Nao somos</th></tr></thead>
+        <tbody>
+          <tr><td>Intimas</td><td>Distantes</td></tr>
+          <tr><td>Corajosas</td><td>Timidas com tabus</td></tr>
+          <tr><td>Claras</td><td>Jargao tecnico</td></tr>
+          <tr><td>Empoderadas</td><td>Condescendentes</td></tr>
+          <tr><td>Acolhedoras</td><td>Frias</td></tr>
+          <tr><td>Aspiracionais</td><td>Inalcancaveis</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sub-h">Exemplos</div>
+      <div class="voice-grid">
+        <div class="voice-box voice-do">
+          <h5>Certo</h5>
+          <ul>
+            <li>"Seu cabelo nao esta caindo a toa. Seu corpo esta te dizendo alguma coisa."</li>
+            <li>"TPM nao e destino. E um desequilibrio que tem solucao."</li>
+            <li>"Menopausa nao e o fim. E o comeco da sua versao mais poderosa."</li>
+            <li>"Voce nao precisa de 15 suplementos. Precisa dos certos, na hora certa."</li>
+          </ul>
+        </div>
+        <div class="voice-box voice-dont">
+          <h5>Errado</h5>
+          <ul>
+            <li>"Nosso produto contem 5000mcg de biotina de alta biodisponibilidade"</li>
+            <li>"Fique linda e jovem para sempre!"</li>
+            <li>"Compre agora com 50% OFF!!!"</li>
+            <li>"Suplemento feminino premium com ingredientes importados"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub-h">Regra de ouro</div>
+      <p class="desc" style="font-size:1rem;font-weight:500;color:var(--text)">Sempre fale sobre a transformacao, nunca sobre o ingrediente. O ingrediente e o como. A transformacao e o porque.</p>
+    </div>
+  </div>
+
+  <!-- 06 EMBALAGEM -->
+  <div class="section" id="embalagem">
+    <div class="wrap">
+      <div class="s-number">06</div>
+      <div class="s-title"><em>Embalagem</em></div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">&#129482;</div>
+          <h4>Frasco</h4>
+          <p>Vidro ambar fosco ou PEAD opaco. Tampa dourada metalizada. Cilindrico, bordas suaves.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128196;</div>
+          <h4>Rotulo frontal</h4>
+          <p>Puramente tipografico. Zero imagens. Logo → nome → promessa → formato → badges. Minimalismo radical.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#127873;</div>
+          <h4>Caixa externa</h4>
+          <p>Triplex 300g, laminacao fosca, cor off-white. Hot stamping dourado no logo. Relevo seco no nome.</p>
+        </div>
+      </div>
+
+      <div class="sub-h">Hierarquia do rotulo</div>
+      <table class="bb-table">
+        <thead><tr><th>#</th><th>Elemento</th><th>Detalhes</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Logo SheGlow</td><td>Pequeno, topo do rotulo</td></tr>
+          <tr><td>2</td><td>Linha decorativa</td><td>Fina, na cor do produto</td></tr>
+          <tr><td>3</td><td>Nome do produto</td><td>Destaque principal (GlowHair, etc)</td></tr>
+          <tr><td>4</td><td>Promessa</td><td>1 linha, uppercase, pequeno</td></tr>
+          <tr><td>5</td><td>Formato</td><td>Capsulas/doses, discreto</td></tr>
+          <tr><td>6</td><td>Badges</td><td>Sem gluten, vegano — pills discretos</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 07 REDES SOCIAIS -->
+  <div class="section" id="social">
+    <div class="wrap">
+      <div class="s-number">07</div>
+      <div class="s-title">Redes <em>Sociais</em></div>
+
+      <div class="sub-h">Pilares de conteudo</div>
+      <table class="bb-table">
+        <thead><tr><th>Pilar</th><th>%</th><th>Exemplo</th></tr></thead>
+        <tbody>
+          <tr><td>Educativo por fase</td><td>40%</td><td>"O que acontece no seu corpo na fase lutea"</td></tr>
+          <tr><td>Transformacoes reais</td><td>25%</td><td>Depoimentos, antes/depois de habitos</td></tr>
+          <tr><td>Bastidores</td><td>15%</td><td>Producao, equipe, decisoes</td></tr>
+          <tr><td>Produto (indireto)</td><td>15%</td><td>Ritual matinal, unboxing</td></tr>
+          <tr><td>Comunidade</td><td>5%</td><td>Reposts, enquetes</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sub-h">Fotografia</div>
+      <div class="photo-rules">
+        <div class="photo-col photo-do">
+          <h5 style="color:var(--sage)">Sim</h5>
+          <ul>
+            <li>Luz natural, golden hour</li>
+            <li>Mulheres reais, diversas, 30-55 anos</li>
+            <li>Tons quentes, fundos neutros</li>
+            <li>Momentos cotidianos</li>
+            <li>Frasco como coadjuvante</li>
+          </ul>
+        </div>
+        <div class="photo-col photo-dont">
+          <h5 style="color:var(--rose)">Nao</h5>
+          <ul>
+            <li>Estudio com fundo branco infinito</li>
+            <li>Modelos muito jovens ou produzidas</li>
+            <li>Fundo preto ou escuro</li>
+            <li>Close de ingredientes/capsulas</li>
+            <li>Estetica fitness ou academia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sub-h">Moodboard de referencia</div>
+      <div class="grid-4">
+        <div class="card"><h4>Glossier</h4><p>Naturalidade, pele real</p></div>
+        <div class="card"><h4>Aesop</h4><p>Minimalismo, materialidade</p></div>
+        <div class="card"><h4>Sezane</h4><p>Feminilidade francesa, tons quentes</p></div>
+        <div class="card"><h4>Ritual</h4><p>Produto como objeto de design</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08 LANCAMENTO -->
+  <div class="section">
+    <div class="wrap">
+      <div class="s-number">08</div>
+      <div class="s-title">Estrategia de <em>Lancamento</em></div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <h4>Onda 1 — Mes 0 a 4</h4>
+          <p><strong>Glow Essentials.</strong> Lanca os 5 produtos base. Gera caixa e audiencia. Conteudo educativo sobre transformacoes. Waitlist → lancamento → otimizacao.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Onda 2 — Mes 4 a 8</h4>
+          <p><strong>GlowCycle.</strong> Produto estrela que posiciona a marca como unica. PR massivo — "primeira marca BR de suplemento por ciclo menstrual". Influenciadoras de saude feminina. Nutricionistas como canal.</p>
+        </div>
+        <div class="tl-item">
+          <h4>Onda 3 — Mes 8 a 14</h4>
+          <p><strong>GlowPrime.</strong> Abre o mercado de perimenopausa no Brasil. Territorio virgem = materia em revista, podcast, TV. Comunidade de mulheres nessa fase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09 REGRAS -->
+  <div class="section" id="regras">
+    <div class="wrap">
+      <div class="s-number">09</div>
+      <div class="s-title">O que <em>nunca</em> fazer</div>
+
+      <div class="rules">
+        <div class="rule"><p><strong>Nunca liderar com ingrediente</strong> — sempre com transformacao</p></div>
+        <div class="rule"><p><strong>Nunca usar fundo preto</strong> — isso e estetica de suplemento masculino</p></div>
+        <div class="rule"><p><strong>Nunca prometer cura</strong> — somos suplemento, nao medicamento</p></div>
+        <div class="rule"><p><strong>Nunca usar "anti-aging"</strong> — usamos "vitalidade" e "renovacao"</p></div>
+        <div class="rule"><p><strong>Nunca subdosar para economizar</strong> — prefira menos produtos bem feitos</p></div>
+        <div class="rule"><p><strong>Nunca ignorar regulatorio</strong> — ANVISA primeiro, marketing depois</p></div>
+        <div class="rule"><p><strong>Nunca copiar concorrente</strong> — nos criamos categoria, nao competimos na deles</p></div>
+        <div class="rule"><p><strong>Nunca tratar menopausa como doenca</strong> — e uma fase poderosa</p></div>
+        <div class="rule"><p><strong>Nunca usar emoji em embalagem</strong> — apenas em redes sociais</p></div>
+        <div class="rule"><p><strong>Nunca mudar a fonte do logo</strong> — Playfair Display, sempre</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="text-align:center;padding:3rem;font-size:.68rem;color:var(--soft);border-top:1px solid var(--border)">
+    <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;margin-bottom:.3rem">She<i style="font-style:italic;color:var(--rose)">Glow</i></div>
+    Brand Book 2026 &middot; Documento confidencial &middot; Cada fase, um brilho
+  </div>
+
+</body>
+</html>
