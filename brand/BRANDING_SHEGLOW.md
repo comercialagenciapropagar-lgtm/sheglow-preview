@@ -1,28 +1,31 @@
-# SheGlow — Brand Book
+# SheGlow Inside — Brand Book v2
+
+**Posicionamento: Mass-market aspiracional nichado**
+Versão 2.0 · 2026-04-14
+
+> v1 (premium editorial) arquivada em `BRANDING_SHEGLOW_V1_PREMIUM.md`
 
 ---
 
 ## 1. A Marca
 
 ### Nome
-**SheGlow** — She (ela) + Glow (brilho)
+**SheGlow Inside** — She (ela) + Glow (brilho) + Inside (por dentro)
 
 ### Tagline
 **Cada fase, um brilho.**
 
 ### Manifesto
 
-> Seu corpo muda. Seu suplemento tambem deveria.
+> Não é sobre ser perfeita. É sobre se sentir bem todo dia.
 >
-> Voce nao e a mesma mulher que era aos 20. Seu ciclo, sua energia, sua pele, sua mente — tudo evolui. Entao por que o mercado insiste em te vender a mesma formula generica?
+> Você não precisa de 15 suplementos caros. Você precisa dos certos, pra fase que você tá vivendo.
 >
-> SheGlow nasceu de uma recusa: a recusa de aceitar que wellness feminino e uma capsula identica para todas. Nos entendemos que o corpo feminino cicla, gesta, transiciona e se renova. E que cada uma dessas fases merece suporte preciso.
+> SheGlow Inside nasceu pra resolver uma coisa só: wellness feminino de verdade, com ciência de verdade, preço de verdade. Sem teatro premium, sem boticário caro, sem marketing vazio de influencer.
 >
-> Nao vendemos ingredientes. Vendemos a transformacao que voce sente no espelho, no foco, na disposicao, na confianca.
+> Seu ciclo muda, sua pele muda, sua energia muda. Nossos suplementos acompanham você. Cada fase tem o seu brilho.
 >
-> Somos a primeira marca brasileira de wellness que acompanha as fases da sua vida.
->
-> **SheGlow. Cada fase, um brilho.**
+> **SheGlow Inside. Cada fase, um brilho.**
 
 ---
 
@@ -32,99 +35,120 @@
 **Wellness por fase de vida feminina**
 
 ### O que somos
-A primeira marca brasileira que adapta suplementacao as fases hormonais e de vida da mulher — ciclo menstrual, gestacao, menopausa.
+A marca brasileira de wellness que faz suplementação acessível por fase de vida — ciclo menstrual, gestação, menopausa. Ciência séria em preço que faz sentido.
 
-### O que NAO somos
-- Nao somos "vitaminas para mulheres" (generico)
-- Nao somos suplemento de academia
-- Nao somos farmacia de manipulacao
-- Nao somos modinha de influenciadora
+### Quem somos vs. concorrentes
 
-### Concorrentes e como nos diferenciamos
+| | **SheGlow Inside** | Puravida | Essential | AlwaysFit | Bloom (US) |
+|---|---|---|---|---|---|
+| Segmento | Mass aspiracional feminino | Natureba | Técnico premium | Performance mass | Mass aspiracional |
+| Preço entrada | **R$ 69,90** | R$ 89–149 | R$ 149–249 | R$ 79–149 | $35 (~R$ 175) |
+| Público | Mulheres 30+ | Todos | Todos | Todos | Mulheres 18–35 |
+| Estética | **Jovem, colorida, forte** | Granola/artesanal | Clínico/frio | Atlético masculino | Rosa vibrante |
+| Canal | **TikTok + IG → DTC** | Varejo/site | Farmácia/site | Amazon/farmácia | TikTok/Target |
+| Moat | **Fases hormonais** | Portfolio amplo | Biodisponibilidade | Dr. Barakat | Marketing viral |
 
-| | SheGlow | Puravida | Essential | AlwaysFit |
-|---|---|---|---|---|
-| Foco | Fases da vida feminina | Alimentacao natural (generico) | Biodisponibilidade (tecnico) | Performance/saude (medico) |
-| Tom | Intimo, corajoso, acolhedor | Educativo, doutrinario | Cientifico, frio | Clinico, masculino |
-| Publico | Mulheres 30+ exclusivamente | Todos | Todos | Todos |
-| Moat | Produtos por fase hormonal | Portfólio amplo | Formas bioativas | Dr. Barakat |
+### Onde jogamos
+- **DTC social-first** — Instagram + TikTok levando pra página própria
+- Varejo físico vem na onda 2 (mês 8+)
+
+### Onde NÃO jogamos
+- Não somos a marca mais barata (deixa pra Growth Farmácia)
+- Não somos farmácia de manipulação
+- Não somos premium boutique (deixa pra Hum, Ritual)
+- Não competimos com Centrum/Redoxon no genérico
 
 ---
 
 ## 3. Pilares da Marca
 
-### 1. Fases, nao formulas
-O produto se adapta a voce, nao o contrario. Nunca lideramos com ingrediente — lideramos com a transformacao.
+### 1. Acessível, não barata
+R$ 69,90 é preço de café premium. A gente entrega qualidade de marca que cobra R$ 150. Margem vem do canal (DTC, sem intermediário) e do volume (recorrência).
 
-### 2. Ciencia acessivel
-Rigor cientifico sem ser intimidadora. Educamos sem ser pedantes. A mulher entende POR QUE esta tomando, nao so O QUE.
+### 2. Fases, não formulas genéricas
+O produto se adapta a você, não o contrário. Ciclo menstrual, gestação, menopausa — temos linhas específicas. Nunca lideramos com ingrediente.
 
-### 3. Coragem para falar
-Ciclo menstrual, TPM, perimenopausa, fogachos — falamos abertamente sobre o que o mercado trata como tabu.
+### 3. Ciência sem enrolação
+Rigor científico sem ser doutrinadora. A mulher entende o POR QUE tá tomando em 1 frase. Chega de bula pra suplemento.
 
-### 4. Comunidade real
-Mulheres compartilhando suas fases sem filtro. Nao e sobre a marca — e sobre elas.
+### 4. Coragem para falar
+Ciclo, TPM, perimenopausa, fogachos, corrimento, libido — falamos abertamente. Sem tabu. Sem linguagem de farmácia.
+
+### 5. Recorrência é amor
+Suplemento bom é tomado todo dia. Nosso modelo é assinatura com 15% de desconto + frete grátis. Volume vem da repetição, não do ticket.
 
 ---
 
 ## 4. Arquitetura de Produtos
 
 ```
-SheGlow
+SheGlow Inside
 |
 |-- GLOW ESSENTIALS (Linha base — gera caixa)
-|   |-- GlowHair      Cabelo, pele, unhas
-|   |-- GlowSkin      Colageno, firmeza, articulacoes
-|   |-- GlowFocus     Clareza mental, foco, calma
-|   |-- GlowShield    Imunidade, ossos, disposicao
-|   |-- GlowEnergy    Energia sustentada, visao
+|   |-- Glow Hair              Cabelo · Pele · Unhas
+|   |-- Glow Skin              Colágeno em pó 360g · Firmeza
+|   |-- Glow Energy            Energia · Disposição · Foco
+|   |-- Glow Imune & Articula  Imunidade + Articulações
+|   |-- Glow Fit               Detox · Metabolismo
 |
 |-- GLOW PHASES (Diferencial — moat competitivo)
-|   |-- GlowCycle     Ciclo menstrual (2 frascos por fase)
-|   |-- GlowMama      Gestacao e pos-parto
-|   |-- GlowPrime     Perimenopausa e menopausa
+|   |-- Glow Ciclo             Ciclo menstrual (2 frascos/fase)
+|   |-- Glow Mama              Gestação e pós-parto
+|   |-- Glow Plena             Perimenopausa e menopausa
 |
-|-- GLOW RITUALS (Futuro — experiencia)
-|   |-- GlowMorning   Sache matinal dissolvivel
-|   |-- GlowNight     Gummies premium noturnos
+|-- GLOW RITUALS (Futuro — experiência)
+    |-- Glow Manhã             Sachê matinal dissolvível
+    |-- Glow Noite             Gummies noturnos
 ```
 
 ### Regra de naming
-Sempre **Glow + transformacao**. Nunca nome de ingrediente.
-- Certo: GlowFocus, GlowCycle, GlowPrime
-- Errado: MagGlow, CollaGlow, OmegaGlow
+**"Glow + palavra"** separado por espaço, mistura inglês popular (Hair, Skin, Energy, Fit) + PT-BR (Imune, Ciclo, Mama, Plena). Sempre pela transformação, nunca pelo ingrediente.
 
 ---
 
-## 5. Publico-Alvo
+## 5. Pricing & Recorrência
 
-### Persona 1: "A Protagonista" (30-42)
-- Profissional ativa, urbana, renda B+/A
-- Sente queda de cabelo, brain fog, cansaco
-- Pesquisa antes de comprar, le rotulos
-- Entrada: GlowHair + GlowFocus
-- Upsell: GlowCycle
+### Preços de tabela
 
-### Persona 2: "A Criadora" (28-38)
-- Gestante ou pos-parto
-- Busca seguranca cientifica para ela e o bebe
-- Entrada: GlowMama
-- Upsell: GlowSkin + GlowShield
+| Produto | Único | Assinatura (−15%) |
+|---|---|---|
+| Glow Hair | R$ 69,90 | R$ 59,40 |
+| Glow Skin (360g) | R$ 89,90 | R$ 76,40 |
+| Glow Energy | R$ 69,90 | R$ 59,40 |
+| Glow Imune & Articula | R$ 79,90 | R$ 67,90 |
+| Glow Fit | R$ 69,90 | R$ 59,40 |
 
-### Persona 3: "A Renascida" (42-58)
-- Perimenopausa, fogachos, mudancas hormonais
-- Mercado virgem no Brasil — ninguem fala com ela
-- Entrada: GlowPrime
-- Upsell: GlowFocus + GlowEnergy
+### Bundles (ticket médio alvo: R$ 149)
+- **Starter Pack** (Hair + Skin): R$ 139,90
+- **Trio Essentials** (Hair + Skin + Energy): R$ 189,90
+- **Full Essentials** (5 frascos): R$ 299,90
 
-### Persona 4: "A Prescritora"
-- Nutricionista, dermato, medica integrativa
-- Quer marca seria para recomendar
-- Canal: programa profissional + amostras
+### Frete
+- Grátis acima de R$ 119 (favorece bundle)
+- Assinatura: frete grátis sempre
+
+### Descontos
+- Assinatura: −15%
+- Primeira compra (cupom social): −15%
+- Nunca dar mais que 25% de desconto (queimar margem e posicionamento)
 
 ---
 
 ## 6. Identidade Visual
+
+### Moodboard
+
+**Referências visuais canônicas:**
+- **Bloom Nutrition** (benchmark principal) — wellness feminino, rosa vibrante, DTC social
+- **Olly** — vitamins mass, cores fortes por SKU, estética alegre
+- **Hum Nutrition** — feminino com força, badges e hierarquia clara
+- **Liquid IV** — thumbnail-friendly, cores saturadas, fácil identificação
+- **Hims/Hers** — wellness moderno DTC, design acessível premium
+
+**Referências que NÃO servem mais:**
+- ~~Aesop, Glossier, Sezane~~ (muito boutique/premium)
+- ~~Puravida, Centrum~~ (muito genérico/natureba)
+- ~~AlwaysFit, Growth~~ (muito masculino/performance)
 
 ### Paleta de Cores
 
@@ -132,259 +156,295 @@ Sempre **Glow + transformacao**. Nunca nome de ingrediente.
 
 | Cor | Hex | Uso |
 |---|---|---|
-| Rose | `#C4929A` | Cor primaria da marca. Logo "Glow", destaques, CTAs |
-| Grafite | `#1C1C1C` | Texto principal, fundos escuros, botoes |
-| Cream | `#FDFBF8` | Fundo principal do site e materiais |
-| Warm White | `#F8F5F1` | Fundo secundario, cards |
-| Gold | `#BFA15E` | Acentos premium, selos, assinatura |
+| Rose Vibrante | `#E85A7B` | Cor primária SheGlow. Logo, CTAs, Glow Hair |
+| Grafite | `#1A1A1A` | Texto principal, tipografia de nome produto |
+| Cream | `#FFF8F2` | Fundo principal site/material |
+| Warm White | `#FDF4EB` | Fundo secundário |
+| Coral Support | `#FF8A6F` | Ênfase secundária, badges |
 
-**Cores por produto:**
+**Cores por produto (saturadas, para prateleira e thumbnail):**
 
-| Produto | Hex | Aplicacao |
+| Produto | Hex | Nome |
 |---|---|---|
-| GlowHair | `#C4929A` (Rose) | Frasco, rotulo, gradiente |
-| GlowSkin | `#6BA8B8` (Azul Oceano) | Frasco, rotulo, gradiente |
-| GlowFocus | `#BFA15E` (Dourado) | Frasco, rotulo, gradiente |
-| GlowShield | `#D4A040` (Ambar) | Frasco, rotulo, gradiente |
-| GlowEnergy | `#8FA888` (Sage) | Frasco, rotulo, gradiente |
+| Glow Hair | `#E85A7B` | Rose Vibrante |
+| Glow Skin | `#8CAB5E` | Verde Fresh |
+| Glow Energy | `#F07C4A` | Laranja Sunrise |
+| Glow Imune & Articula | `#E8B73A` | Amarelo Mel |
+| Glow Fit | `#B13E54` | Cereja |
 
 **Cores por fase (Glow Phases):**
 
-| Fase | Hex | Significado |
+| Fase | Hex | Nome |
 |---|---|---|
-| GlowCycle | `#8FA888` (Sage) | Natureza, ciclo, renovacao |
-| GlowMama | `#C4929A` (Rose) | Maternidade, acolhimento |
-| GlowPrime | `#9E8FB8` (Lavanda) | Sabedoria, transicao, poder |
-
-### Gradientes
-
-Cada produto usa um gradiente suave de 3 tons (claro → medio → escuro) da sua cor:
-
-```
-GlowHair:   #FAF0EF → #F2DDE0 → #E8CFC8
-GlowSkin:   #EFF6F8 → #D4E8EE → #B8D8E4
-GlowFocus:  #F8F4EC → #EDE4D0 → #DDD0B0
-GlowShield: #FDF6E8 → #F5E6C4 → #E8D4A0
-GlowEnergy: #F0F5F0 → #DCE8DC → #C4D8C4
-```
+| Glow Ciclo | `#D0506B` | Rosa Ciclo |
+| Glow Mama | `#F4A1AD` | Rosa Bebê |
+| Glow Plena | `#9B7EB8` | Lilás Plena |
 
 ### Tipografia
 
-| Uso | Fonte | Peso | Detalhes |
-|---|---|---|---|
-| Logo "SheGlow" | Playfair Display | 600 | "She" normal, "Glow" italico em rose |
-| Nomes de produto | Playfair Display | 600-700 | "Glow" normal, segunda palavra italico na cor |
-| Titulos / headlines | Playfair Display | 400 | Palavras-chave em italico |
-| Subtitulos / eyebrows | Inter | 600 | Uppercase, letter-spacing 0.25-0.3em |
-| Corpo de texto | Inter | 400 | Tamanho 0.85-0.95rem, line-height 1.7 |
-| Depoimentos | Inter | 400 | Italico, cor #888 |
-| Dados / specs | Inter | 500-600 | Pode usar DM Mono para numeros |
+**Fontes principais (todas do Google Fonts, gratuitas):**
 
-**Fontes (Google Fonts, gratuitas):**
-- Playfair Display: https://fonts.google.com/specimen/Playfair+Display
-- Inter: https://fonts.google.com/specimen/Inter
-- DM Mono (secundaria): https://fonts.google.com/specimen/DM+Mono
+| Uso | Fonte | Peso |
+|---|---|---|
+| Logo "SheGlow Inside" | **Outfit** | 700 (Bold) |
+| Nomes de produto (Glow Hair) | **Outfit** | 900 (Black) |
+| Headlines e títulos | **Outfit** | 700–900 |
+| Body, badges, funcional | **Outfit** | 400–600 |
+| Acentos editoriais (opcional) | **DM Serif Display** | 400 |
+
+**Por que Outfit:**
+- Sans serif rounded, variable, 100% variação 100–900
+- Vibe jovem mas não infantil
+- Funciona bem em thumbnail (legibilidade a 32px)
+- Google Font gratuito (escalável sem royalty)
+
+Link: https://fonts.google.com/specimen/Outfit
+
+### Sistema de Badges Circulares
+
+Cada rótulo tem **1–3 badges circulares** na frente. Servem pra comunicar:
+- Benefícios-chave (3 palavras, ex: "Cabelo · Pele · Unhas")
+- Duração da dose (ex: "30 DIAS" ou "60 CÁPSULAS")
+- Credenciais (ex: "SEM GLÚTEN", "NOTIFICADO ANVISA")
+
+**Especificação do badge:**
+- Forma: círculo perfeito
+- Diâmetro: 20–28mm no rótulo impresso
+- Borda: 1.5pt na cor do grafite ou contrastante
+- Interior: branco/cream ou cor do produto
+- Tipografia: Outfit 700, uppercase, tracked
+- Placement: cantos ou laterais do nome do produto
 
 ### Logo
 
 ```
-She Glow
-^^^  ^^^^
-|     |
-|     Playfair Display Italic, cor #C4929A (rose)
+SheGlow  Inside
+▲        ▲
+|        |
+|        Outfit 500, cor grafite #1A1A1A, tamanho 55% do SheGlow
 |
-Playfair Display Regular, cor #1C1C1C (grafite)
+Outfit 900 black, cor grafite #1A1A1A, "Glow" pode ganhar acento rose em variação especial
 ```
 
-**Regras do logo:**
-- Sempre em uma linha, nunca empilhado
-- Espaco minimo ao redor: altura da letra "S" em todos os lados
-- Sobre fundo escuro: "She" em branco, "Glow" em rose
-- Nunca alterar as cores, fontes ou proporcoes
-- Tamanho minimo: 80px de largura em digital
+**Regras:**
+- Sempre em uma linha (horizontal) ou stacked (SheGlow em cima, Inside embaixo)
+- Letra "G" de Glow pode ter detalhe (swash/swoosh) em edições especiais
+- Espaço entre "SheGlow" e "Inside": 1 caractere largo
+- Sobre fundo colorido: tudo em cream `#FFF8F2` ou branco
 
-### Icones e Ilustracoes
-- **Nao usar:** fotos de ingredientes, moleculas, folhas, frutas
-- **Nao usar:** icones genericos de saude (cruzes, coracoes, etc)
-- **Usar:** gradientes suaves, formas abstratas, glass-morphism
-- **Usar:** emojis apenas em redes sociais, nunca em embalagem
+### Ícones e Ilustrações
+- **Usar:** formas geométricas simples (círculo, arco, blob), badges, cores chapadas
+- **Usar:** fotografia de mulher real (não modelo clínica), tons quentes, natural
+- **Não usar:** fotos de molécula, folhas, frutas, ingredientes isolados
+- **Não usar:** ícones de farmácia (cruz, pílula, coração)
+- **Emojis:** liberados em redes sociais e email, NÃO em embalagem
 
 ---
 
 ## 7. Tom de Voz
 
 ### Personalidade
-Se SheGlow fosse uma pessoa, seria sua **amiga que e nutricionista** — ela sabe de ciencia, mas conversa com voce tomando cafe. Nunca e condescendente, nunca e fria.
+Se SheGlow Inside fosse pessoa, seria **a amiga que sabe de ciência mas não te trata como burra**. Direta, confiante, alegre, acessível. Não é a premium nutricionista sussurrando. É a amiga que foi na consulta e volta te contando.
 
 ### Atributos
 
-| Somos | Nao somos |
+| Somos | Não somos |
 |---|---|
-| Intimas | Distantes |
-| Corajosas | Timidas com tabus |
-| Claras | Jargao tecnico |
-| Empoderadas | Condescendentes |
-| Cientificas | Pseudocientificas |
 | Diretas | Enroladas |
-| Acolhedoras | Frias |
-| Aspiracionais | Inalcancaveis |
+| Confiantes | Arrogantes |
+| Alegres | Bobinhas |
+| Populares | Baratas |
+| Acessíveis | Comuns |
+| Corajosas | Tabu |
+| Empoderadas | Agressivas |
+| Claras | Infantis |
 
-### Exemplos de tom
+### Exemplos
 
 **CERTO:**
-- "Seu cabelo nao esta caindo a toa. Seu corpo esta te dizendo alguma coisa."
-- "TPM nao e destino. E um desequilibrio que tem solucao."
-- "Menopausa nao e o fim. E o comeco da sua versao mais poderosa."
-- "Voce nao precisa de 15 suplementos. Precisa dos certos, na hora certa."
+- "Cabelo caindo não é drama, é sinal. Seu corpo tá avisando alguma coisa."
+- "TPM passou do ponto? Não é frescura. É desequilíbrio. E tem solução."
+- "Menopausa não é o fim. É começo. E a gente tem um frasco pra essa fase."
+- "15 suplementos é exagero. 3 certos é inteligência."
+- "Seu corpo muda a cada 7 anos. Seu suplemento também deveria."
 
 **ERRADO:**
-- "Nosso produto contem 5000mcg de biotina de alta biodisponibilidade" (tecnico demais)
-- "Fique linda e jovem para sempre!" (promessa vazia)
-- "Compre agora com 50% OFF!!!" (varejo barato)
-- "Suplemento feminino premium com ingredientes importados" (generico)
+- ~~"Nossa formulação premium de alta biodisponibilidade..."~~ (técnico premium)
+- ~~"Amiga, vamos juntas nessa jornada incrível..."~~ (papinho clichê)
+- ~~"OFERTA! 50% OFF! COMPRA AGORA!"~~ (varejo barato)
+- ~~"Anti-aging facial..."~~ (linguagem velha, use "vitalidade")
 
 ### Regra de ouro
-Sempre fale sobre a **transformacao**, nunca sobre o **ingrediente**. O ingrediente e o como. A transformacao e o porque.
+**Frases curtas. Verbos fortes. Zero rodeio.** Se dá pra dizer em 8 palavras, não use 15.
 
 ---
 
 ## 8. Embalagem
 
 ### Frasco
-- Material: Vidro ambar fosco (premium) ou PEAD opaco (escala)
-- Tampa: Dourada metalizada ou fosca
-- Formato: Cilindrico, bordas suaves
+- Material: PEAD opaco branco/cream (escala, custo baixo)
+- Tampa: PEAD branco padrão, monogram em gold foil opcional em edições
+- Formato: cilíndrico, padrão 60cps
 
-### Rotulo frontal (hierarquia)
-1. Logo SheGlow (pequeno, topo)
-2. Linha decorativa fina na cor do produto
-3. Nome do produto (GlowHair, GlowFocus, etc) — destaque principal
-4. Promessa em 1 linha (uppercase, pequeno)
-5. Formato (capsulas/doses, pequeno)
-6. Badges (sem gluten, vegano — pills discretos)
+### Rótulo (layout)
 
-**Estilo:** Puramente tipografico. Zero imagens. Fundo branco translucido. Minimalismo radical.
+**Frente:**
+1. Nome "SheGlow Inside" — discreto, topo esquerdo (sans, 9pt)
+2. Linha fina horizontal na cor do produto (separador)
+3. **Nome do produto GRANDE** — Outfit 900 black, ocupa 40–50% do rótulo
+4. **Badge circular principal** — lado do nome, ex: "30 DIAS" ou "DOSAGEM DIÁRIA"
+5. **Promessa em 3 palavras** — Outfit 700, uppercase tracked
+6. Formato (60 cáps · peso líq)
+7. Badges pequenas (Sem Glúten, Notificado ANVISA)
 
-### Rotulo traseiro
-- Tabela nutricional (ANVISA)
+**Verso:**
+- Tabela nutricional (ANVISA obrigatório)
 - Ingredientes
 - Modo de uso
-- Advertencias legais
-- Dados do fabricante
-- QR code (certificado de analise do lote)
+- Advertências legais
+- Fabricante + distribuidor
+- QR code pra página do produto (cross-channel)
+
+**Estética:**
+- Fundo: cor do produto (saturada, contraste alto)
+- Texto: grafite sólido (#1A1A1A) ou cream sobre cor escura
+- Alegre mas profissional
+- Legível em thumbnail 200x200px (test case: Instagram ads)
 
 ### Caixa externa
-- Papel triplex 300g, laminacao fosca
-- Cor base: off-white (#FDFBF8)
-- Hot stamping dourado no logo
-- Relevo seco no nome do produto (se orcamento permitir)
+- Papel triplex 250g, laminação brilhante ou soft-touch
+- Cor base: cream + faixas da cor do produto
+- Custo-otimizada (sem hot stamping, sem relevo seco)
+- Fita de assinatura interna (Instagram unboxing-friendly)
 
 ---
 
-## 9. Redes Sociais
+## 9. Canal: Instagram + TikTok → DTC
 
-### Instagram (Canal principal)
+### Instagram
 
 **Bio:**
 ```
-SheGlow
-Cada fase, um brilho ✨
-A 1a marca BR de wellness por fase de vida
-Mulheres 30+ | Ciencia que voce sente
-🔗 sheglow.com.br
+SheGlow Inside 🌸
+Cada fase, um brilho.
+Wellness por fase de vida feminina.
+R$ 69,90 · frete grátis acima de R$ 119
+⬇️ Comprar
 ```
 
-**Pilares de conteudo:**
+**Pilares de conteúdo:**
 
 | Pilar | % | Exemplo |
 |---|---|---|
-| Educativo por fase | 40% | "O que acontece no seu corpo na fase lutea" |
-| Transformacoes reais | 25% | Depoimentos, antes/depois de habitos |
-| Bastidores da marca | 15% | Producao, equipe, decisoes |
-| Produto (indireto) | 15% | Ritual matinal, unboxing, como usar |
-| Comunidade | 5% | Reposts, perguntas, enquetes |
-
-**Regras visuais para feed:**
-- Paleta: rose, cream, sage, lavanda — nunca cores vibrantes/neon
-- Fotos: luz natural, tons quentes, mulheres reais (nao modelos perfeitas)
-- Texto em imagem: Playfair Display para titulos, Inter para corpo
-- Nunca fundo preto (isso e AlwaysFit, nao SheGlow)
-- Nunca foto isolada de frasco sem contexto humano
+| Educação rápida | 35% | "O que sua TPM tá te contando em 30s" |
+| Social proof | 25% | Depoimentos, transformações, reviews |
+| Produto | 20% | Unboxing, rotina, como tomar |
+| Lifestyle da persona | 15% | Manhã de mulher 30+, luta real, dia-a-dia |
+| Comunidade | 5% | Perguntas, enquetes, Q&A |
 
 ### TikTok
 
-**Formatos que funcionam:**
-- "POV: voce descobre por que esta cansada desde os 30"
-- "Coisas que ninguem te conta sobre a perimenopausa"
-- "Minha rotina matinal de suplementos (e por que cada um)"
-- "Red flags em rotulos de suplementos"
+**Formatos que performam:**
+- POV: "quando seu cabelo para de cair depois de 3 meses"
+- "Coisas que ninguém te conta sobre perimenopausa"
+- "Red flags em suplementos femininos"
+- "Rotina matinal de uma Mulher 30+ realista (não influencer)"
+- Before/after de 60 dias (legal, sem promessa médica)
 
-### Email
+### Landing DTC (página própria)
 
-**Tom:** Como uma carta de uma amiga inteligente.
-**Assinatura:** "Com carinho, equipe SheGlow"
-**Nunca:** "Nao perca!" / "Ultima chance!" / "Corra!"
+Estrutura ideal:
+1. Hero: nome + tagline + preço + CTA
+2. Problema que resolve (2 linhas)
+3. Produtos da linha (grid visual com cores)
+4. Ciência (simples, 3 bullets)
+5. Depoimentos (3–5 com foto)
+6. Oferta starter pack
+7. FAQ rápido
+8. CTA final
+
+### Email / SMS
+
+**Tom:** Amiga que manda dica quinta-feira de manhã. Não é newsletter de farmácia. Não é "Oi amiga!!! 💖".
+
+**Assinatura:** "Com carinho, time SheGlow"
+
+**Jamais:**
+- "Não perca!"
+- "Última chance!"
+- "OFERTA IMPERDÍVEL"
 
 ---
 
-## 10. Fotografias
+## 10. Fotografia
 
-### Estilo fotografico
+### Estilo
 
 **Sim:**
-- Luz natural, golden hour
-- Mulheres reais, diversas, 30-55 anos
-- Tons quentes, fundos neutros (cream, bege, rose)
-- Momentos cotidianos: cafe da manha, escritorio, espelho
-- Frasco como coadjuvante, nunca protagonista sozinho
+- Mulheres reais 30–55, diversas em tom de pele, corpo, idade
+- Fundo simples colorido (nunca infinito branco)
+- Tom quente, golden hour ok mas não obrigatório
+- Mulher em movimento, rindo, vivendo (não posando)
+- Produto ao lado ou na mão, nunca protagonista só
 
-**Nao:**
-- Estudio com fundo infinito branco
-- Modelos muito jovens (<25) ou muito produzidas
-- Fundo preto ou escuro
-- Close extremo de ingredientes/capsulas
-- Estetica "fitness" ou "academia"
-- Filtros pesados ou pele porcelana
+**Não:**
+- Modelo "perfeita" acima de 1.80, pele porcelana
+- Fundo preto (AlwaysFit)
+- Fundo branco de estúdio
+- Close de cápsula/pó
+- Estética "fitness academia"
+- Filtros pesados
 
-### Moodboard de referencia
-Marcas para inspirar o fotografo:
-- Glossier (naturalidade, pele real)
-- Aesop (minimalismo, materialidade)
-- Sezane (feminilidade francesa, tons quentes)
-- Ritual (produto como objeto de design)
+### Inspiração direta
+- Bloom Nutrition (mulheres vibrantes, cor forte, pose natural)
+- Hum Nutrition (diversidade, modernidade)
+- Target marketing geral (popular-aspiracional)
 
 ---
 
-## 11. Estrategia de Lancamento
+## 11. Estratégia de Lançamento
 
-### Onda 1 (Mes 0-4): Glow Essentials
-- Lanca os 5 produtos base
-- Gera caixa e audiencia
-- Conteudo educativo sobre transformacoes
-- Waitlist → lancamento → otimizacao
+### Onda 1 (Mês 0–4): 5 Essentials
+- Lançar os 5 produtos base simultaneamente
+- Pack "Starter" Hair+Skin via Instagram ads
+- TikTok orgânico: 3 posts/semana por persona de fundadora
+- Microinfluencers nicho (nutri, dermato, mães)
+- **Meta:** 5.000 unidades em 90 dias, LTV R$ 240
 
-### Onda 2 (Mes 4-8): GlowCycle
-- Produto estrela que posiciona a marca como unica
-- PR massivo — "primeira marca BR de suplemento por ciclo"
-- Influenciadoras de saude feminina
-- Nutricionistas como canal
+### Onda 2 (Mês 4–8): Glow Ciclo
+- Produto estrela — "O primeiro suplemento BR por fase do ciclo menstrual"
+- PR em portais feministas, podcasts, TV
+- Nutris como afiliados (comissão 20%)
+- **Meta:** 3.000 Glow Ciclo/mês, recorrência 40%
 
-### Onda 3 (Mes 8-14): GlowPrime
-- Abre o mercado de perimenopausa no Brasil
-- Territorio virgem = materia em revista, podcast, TV
-- Comunidade de mulheres nessa fase
+### Onda 3 (Mês 8–14): Glow Plena
+- Perimenopausa é território virgem no Brasil
+- Materia em Veja, Marie Claire, Capricho+ (target Mulheres 40+)
+- Grupos privados de menopausa no Facebook/WhatsApp
+- **Meta:** abrir categoria, não maximizar venda
+
+### Onda 4 (Mês 14+): Varejo
+- Entrar farmácias premium (Drogasil, Raia Expresso, Panvel)
+- Amazon/Mercado Livre
+- Boutiques wellness
 
 ---
 
 ## 12. O que nunca fazer
 
-1. **Nunca liderar com ingrediente** — sempre com transformacao
-2. **Nunca usar fundo preto** — isso e estetica de suplemento masculino
-3. **Nunca prometer cura** — somos suplemento, nao medicamento
-4. **Nunca usar "anti-aging"** — usamos "vitalidade" e "renovacao"
-5. **Nunca subdosar para economizar** — prefira menos produtos bem feitos
-6. **Nunca ignorar regulatorio** — ANVISA primeiro, marketing depois
-7. **Nunca copiar concorrente** — nos criamos categoria, nao competimos na deles
-8. **Nunca tratar menopausa como doenca** — e uma fase poderosa
-9. **Nunca usar emoji em embalagem** — apenas em redes sociais
-10. **Nunca mudar a fonte do logo** — Playfair Display, sempre
+1. **Nunca** subir preço acima de R$ 99 (exceto linha Phases especial)
+2. **Nunca** fazer desconto acima de 25% (queima margem e posicionamento)
+3. **Nunca** usar modelo "perfeita" inalcançável em fotos
+4. **Nunca** prometer cura (suplemento, não medicamento)
+5. **Nunca** usar "anti-aging" — use "vitalidade", "renovação"
+6. **Nunca** tratar menopausa como doença
+7. **Nunca** copiar AlwaysFit ou Bloom — a gente CRIA, não reage
+8. **Nunca** ignorar ANVISA (ela vem primeiro, marketing segundo)
+9. **Nunca** usar Outfit Light em body (mínimo 400)
+10. **Nunca** fazer embalagem monocromática (cores por SKU é law)
+11. **Nunca** vender sem foto da mulher real na landing
+12. **Nunca** usar "premium" ou "luxury" em texto (não somos)
+
+---
+
+*v2 — Construído sobre a mudança de posicionamento de 2026-04-14. Roberto reorientou de premium-boutique para mass-market aspiracional nichado. Todo material que contradisser este documento deve ser atualizado ou arquivado.*

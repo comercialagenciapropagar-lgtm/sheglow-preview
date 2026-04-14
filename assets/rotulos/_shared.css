@@ -1,0 +1,331 @@
+/* SheGlow — rótulos print-ready (layout editorial: fundo colorido + tipografia Fraunces black) */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..900,0..100;1,9..144,400..900,0..100&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+@page { margin: 0; }
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html, body {
+  background: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+  color: #1C1C1C;
+}
+
+body {
+  padding: 40px;
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+}
+
+.instrucoes {
+  max-width: 640px;
+  background: #fff;
+  padding: 16px 20px;
+  border-left: 3px solid var(--cor-produto, #BA5670);
+  font-size: 13px; line-height: 1.5; color: #333;
+}
+.instrucoes h3 { font-family: 'Fraunces', serif; font-weight: 700; margin-bottom: 8px; font-size: 15px; }
+.instrucoes code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+@media print {
+  body { background: #fff; padding: 0; gap: 0; }
+  .instrucoes { display: none; }
+}
+
+/* ==========================================================================
+   Rótulo — container com sangria
+   ========================================================================== */
+
+.rotulo {
+  background: #FDFBF8;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  page-break-after: always;
+}
+.rotulo:last-child { page-break-after: auto; }
+
+.rotulo.tamanho-60caps {
+  width: 186mm; height: 76mm;
+}
+.rotulo.tamanho-pote360g {
+  width: 308mm; height: 96mm;
+}
+
+.area-util {
+  position: absolute;
+  top: 3mm; left: 3mm; right: 3mm; bottom: 3mm;
+  display: grid;
+  grid-template-columns: 0.95fr 1.1fr 1fr;
+  background: #FDFBF8;
+}
+.rotulo.tamanho-pote360g .area-util {
+  grid-template-columns: 1fr 1.1fr 1fr;
+}
+
+/* Marcas de corte */
+.rotulo::before, .rotulo::after {
+  content: '';
+  position: absolute;
+  width: 6mm; height: 6mm;
+  border: 0.2mm solid #1C1C1C;
+  opacity: 0.35;
+}
+.rotulo::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+.rotulo::after { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+/* ==========================================================================
+   PAINEL CENTRAL — fundo colorido inteiro + tipografia Fraunces Black
+   ========================================================================== */
+
+.painel-centro {
+  grid-column: 2;
+  position: relative;
+  overflow: hidden;
+  background: var(--cor-produto, #BA5670);
+  padding: 2.5mm 4mm 2.5mm 5mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* "SheGlow Inside" — assinatura no topo */
+.sheglow-inside {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 7.5pt;
+  letter-spacing: 0.005em;
+  color: #FDFBF8;
+  margin-bottom: 1mm;
+}
+.sheglow-inside .glow-palavra { font-weight: 600; }
+.sheglow-inside .inside { opacity: 0.85; margin-left: 0.3mm; }
+
+/* Suplemento alimentar — label discreto acima do bloco principal */
+.tipo-suplemento {
+  font-family: 'Inter', sans-serif;
+  font-size: 4.5pt;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(253, 251, 248, 0.8);
+  margin-top: 0.5mm;
+  margin-bottom: 0.5mm;
+}
+
+/* Bloco grande tipográfico — glow + nome */
+.marca-bloco {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  color: #1C1C1C;
+  text-transform: lowercase;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5mm 0;
+}
+.marca-bloco .glow,
+.marca-bloco .nome-grande {
+  display: block;
+  font-size: 58pt;
+  line-height: 0.82;
+}
+.marca-bloco .glow { letter-spacing: -0.04em; }
+.marca-bloco .nome-grande { letter-spacing: -0.045em; }
+/* Variações para nomes longos/quebrados em 2 linhas */
+.marca-bloco .nome-grande.longo { font-size: 42pt; }
+.marca-bloco .nome-grande.duas-linhas { font-size: 32pt; line-height: 0.88; }
+
+/* Promessa / benefício em 3 palavras */
+.promessa {
+  font-family: 'Inter', sans-serif;
+  font-size: 5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #1C1C1C;
+  margin-top: 0.8mm;
+  padding-top: 0.8mm;
+  border-top: 0.25mm solid rgba(28, 28, 28, 0.35);
+}
+
+/* Info base — peso líq, formato, regulatório */
+.info-base {
+  font-family: 'Inter', sans-serif;
+  font-size: 4.5pt;
+  line-height: 1.35;
+  color: rgba(253, 251, 248, 0.9);
+  letter-spacing: 0.05em;
+  margin-top: auto;
+  padding-top: 1mm;
+}
+.info-base .formato-destaque {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 7.5pt;
+  letter-spacing: 0.02em;
+  color: #FDFBF8;
+  text-transform: none;
+  margin-bottom: 0.6mm;
+  display: block;
+}
+.info-base .formato-destaque strong { font-weight: 900; }
+.info-base .badges {
+  display: flex;
+  gap: 2mm;
+  flex-wrap: wrap;
+  margin-top: 0.8mm;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  font-size: 4.5pt;
+}
+.info-base .badges span { opacity: 0.85; white-space: nowrap; }
+.info-base .badges span::before { content: '· '; opacity: 0.6; }
+.info-base .badges span:first-child::before { content: ''; }
+.info-base .anvisa {
+  font-size: 4pt;
+  margin-top: 0.8mm;
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Variante pote 360g (Glow Skin) — tipografia ainda maior
+   ========================================================================== */
+
+.rotulo.tamanho-pote360g .painel-centro { padding: 5mm 6mm 5mm 7mm; }
+.rotulo.tamanho-pote360g .sheglow-inside { font-size: 11pt; margin-bottom: 2mm; }
+.rotulo.tamanho-pote360g .tipo-suplemento { font-size: 6.5pt; letter-spacing: 0.3em; margin-bottom: 2mm; }
+.rotulo.tamanho-pote360g .marca-bloco .glow,
+.rotulo.tamanho-pote360g .marca-bloco .nome-grande { font-size: 78pt; }
+.rotulo.tamanho-pote360g .promessa { font-size: 8pt; letter-spacing: 0.28em; margin-top: 2.5mm; padding-top: 2.5mm; }
+.rotulo.tamanho-pote360g .info-base { font-size: 6.5pt; margin-top: 3mm; }
+.rotulo.tamanho-pote360g .info-base .formato-destaque { font-size: 11pt; }
+.rotulo.tamanho-pote360g .info-base .badges { font-size: 6pt; }
+.rotulo.tamanho-pote360g .info-base .anvisa { font-size: 5.5pt; }
+
+/* ==========================================================================
+   PAINÉIS LATERAIS — fundo cream, dados regulatórios
+   ========================================================================== */
+
+.painel-esquerdo, .painel-direito {
+  padding: 3.5mm 4mm;
+  font-family: 'Inter', sans-serif;
+  font-size: 5.5pt;
+  line-height: 1.38;
+  color: #1C1C1C;
+  background: #FDFBF8;
+}
+
+.painel-esquerdo h4, .painel-direito h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 6pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.5mm;
+  color: var(--cor-produto, #BA5670);
+  padding-bottom: 0.8mm;
+  border-bottom: 0.3mm solid var(--cor-produto, #BA5670);
+}
+
+.tabela-nutri {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 4.8pt;
+  line-height: 1.3;
+}
+.tabela-nutri caption {
+  font-weight: 700;
+  text-align: left;
+  padding-bottom: 0.8mm;
+  font-size: 5.5pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cor-produto, #BA5670);
+}
+.tabela-nutri th, .tabela-nutri td {
+  padding: 0.35mm 0.4mm;
+  text-align: right;
+  border-bottom: 0.1mm solid rgba(0,0,0,0.12);
+}
+.tabela-nutri th:first-child, .tabela-nutri td:first-child { text-align: left; }
+.tabela-nutri thead th {
+  font-weight: 700;
+  font-size: 4.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tabela-nutri .porcoes {
+  font-size: 4.5pt;
+  font-style: italic;
+  color: #555;
+  padding-bottom: 1mm;
+}
+.tabela-nutri .rodape {
+  font-size: 4pt;
+  font-style: italic;
+  color: #555;
+  line-height: 1.3;
+  padding-top: 1mm;
+}
+
+.ingredientes {
+  font-size: 5pt;
+  line-height: 1.38;
+  text-align: justify;
+  margin-top: 2mm;
+}
+.ingredientes strong { font-weight: 700; }
+
+.alergicos {
+  font-size: 4.8pt;
+  font-weight: 700;
+  margin-top: 1.5mm;
+  line-height: 1.3;
+}
+
+.uso { margin-bottom: 2mm; font-size: 5.5pt; }
+.uso strong { font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 5pt; }
+
+.armazenamento, .advertencia, .fabricante {
+  font-size: 4.7pt;
+  line-height: 1.38;
+  margin-bottom: 1.5mm;
+  color: #333;
+}
+.advertencia { font-weight: 600; }
+.fabricante strong { font-weight: 700; }
+
+.notificacao {
+  font-size: 4.5pt;
+  font-weight: 600;
+  margin-top: 1.5mm;
+  padding-top: 1mm;
+  border-top: 0.2mm solid rgba(0,0,0,0.15);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Variante pote — painéis laterais maiores */
+.rotulo.tamanho-pote360g .painel-esquerdo,
+.rotulo.tamanho-pote360g .painel-direito { font-size: 7pt; padding: 5mm 6mm; }
+.rotulo.tamanho-pote360g .tabela-nutri { font-size: 6.2pt; }
+.rotulo.tamanho-pote360g .painel-esquerdo h4,
+.rotulo.tamanho-pote360g .painel-direito h4 { font-size: 7.5pt; }
+.rotulo.tamanho-pote360g .ingredientes,
+.rotulo.tamanho-pote360g .alergicos { font-size: 6.5pt; }
+.rotulo.tamanho-pote360g .armazenamento,
+.rotulo.tamanho-pote360g .advertencia,
+.rotulo.tamanho-pote360g .fabricante { font-size: 6pt; }
+.rotulo.tamanho-pote360g .notificacao { font-size: 6pt; }

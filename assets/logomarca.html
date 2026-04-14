@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>SheGlow Inside — Logomarca Oficial v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --grafite: #1A1A1A;
+    --rose: #E85A7B;
+    --rose-esc: #C43E61;
+    --cream: #FFF8F2;
+    --cream-warm: #FDF4EB;
+    --gold: #BFA15E;
+    --verde: #8CAB5E;
+    --laranja: #F07C4A;
+    --amarelo: #E8B73A;
+    --cereja: #B13E54;
+    --linha: rgba(26, 26, 26, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--grafite);
+    line-height: 1.6;
+  }
+
+  /* ========================================================================
+     Logomarca — componente reutilizável
+     ======================================================================== */
+
+  .logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--grafite);
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
+    white-space: nowrap;
+  }
+  .logo .sheglow {
+    font-weight: 900;
+  }
+  .logo .inside {
+    font-weight: 500;
+    font-size: 0.55em;
+    opacity: 0.7;
+    letter-spacing: 0;
+  }
+
+  /* Variantes */
+  .logo--negativa { color: var(--cream); }
+  .logo--negativa .inside { opacity: 0.75; }
+
+  .logo--accent .sheglow .glow { color: var(--rose); }
+
+  .logo--gold .sheglow { color: var(--gold); }
+  .logo--gold .inside { color: var(--gold); opacity: 0.8; }
+
+  /* Stacked */
+  .logo-stacked {
+    font-family: 'Outfit', sans-serif;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0.95;
+    color: var(--grafite);
+  }
+  .logo-stacked .linha-1 {
+    font-weight: 900;
+    letter-spacing: -0.03em;
+  }
+  .logo-stacked .linha-2 {
+    font-size: 0.42em;
+    font-weight: 500;
+    opacity: 0.7;
+    margin-top: 0.2em;
+    letter-spacing: 0;
+    align-self: flex-end;
+  }
+
+  /* Monograma */
+  .monogram {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.08em;
+    line-height: 1;
+    text-transform: lowercase;
+  }
+
+  .monogram-circle {
+    width: 1em; height: 1em;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .monogram-circle.filled-rose {
+    background: var(--rose);
+    color: var(--cream);
+  }
+  .monogram-circle.filled-grafite {
+    background: var(--grafite);
+    color: var(--cream);
+  }
+  .monogram-circle.outline-rose {
+    background: transparent;
+    color: var(--rose);
+    border: 0.05em solid var(--rose);
+  }
+  .monogram-circle.outline-grafite {
+    background: transparent;
+    color: var(--grafite);
+    border: 0.05em solid var(--grafite);
+  }
+  .monogram-circle.filled-gold {
+    background: var(--gold);
+    color: var(--cream);
+  }
+  .monogram-circle .sg {
+    font-size: 0.5em;
+  }
+
+  /* ========================================================================
+     Layout
+     ======================================================================== */
+
+  .wrapper { max-width: 1200px; margin: 0 auto; padding: 80px 48px; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 120px 0 100px;
+    border-bottom: 1px solid var(--linha);
+  }
+  .hero .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 40px;
+  }
+  .hero .logo { font-size: 96px; }
+  .hero .tagline {
+    font-family: 'Outfit', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--grafite);
+    opacity: 0.6;
+    margin-top: 40px;
+  }
+
+  /* SEÇÕES */
+  section.bloco {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--linha);
+  }
+  section.bloco:last-child { border-bottom: none; }
+
+  .secao-header {
+    margin-bottom: 48px;
+  }
+  .secao-numero {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 12px;
+  }
+  .secao-titulo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    max-width: 720px;
+  }
+  .secao-titulo em {
+    font-style: normal;
+    color: var(--rose);
+  }
+  .secao-lead {
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 640px;
+    margin-top: 20px;
+    color: var(--grafite);
+    opacity: 0.75;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--cream-warm);
+    border: 1px solid var(--linha);
+    border-radius: 12px;
+    padding: 80px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card--grafite {
+    background: var(--grafite);
+    border: none;
+  }
+  .card--rose { background: var(--rose); border: none; }
+  .card--verde { background: var(--verde); border: none; }
+  .card--amarelo { background: var(--amarelo); border: none; }
+  .card--laranja { background: var(--laranja); border: none; }
+  .card--cereja { background: var(--cereja); border: none; }
+  .card--cream { background: var(--cream); }
+
+  .card .rotulo-card {
+    position: absolute;
+    top: 18px; left: 22px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .card--grafite .rotulo-card,
+  .card--rose .rotulo-card,
+  .card--verde .rotulo-card,
+  .card--amarelo .rotulo-card,
+  .card--laranja .rotulo-card,
+  .card--cereja .rotulo-card { color: var(--cream); opacity: 0.8; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+
+  /* TABELAS */
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 32px;
+  }
+  .spec-table th, .spec-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--linha);
+  }
+  .spec-table th {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .spec-table td {
+    line-height: 1.5;
+  }
+  .spec-table td code {
+    background: var(--cream-warm);
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-family: 'Outfit', monospace;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .swatch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .swatch-dot {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    border: 1px solid var(--linha);
+  }
+
+  /* CLEAR SPACE */
+  .clear-space-demo {
+    display: inline-block;
+    position: relative;
+    padding: 44px 88px;
+    border: 1px dashed rgba(232, 90, 123, 0.5);
+  }
+  .clear-space-demo .bordas-x {
+    position: absolute;
+    font-size: 13px;
+    color: var(--rose);
+    font-weight: 800;
+  }
+  .clear-space-demo .x-top { top: 16px; left: 50%; transform: translateX(-50%); }
+  .clear-space-demo .x-bottom { bottom: 16px; left: 50%; transform: translateX(-50%); }
+  .clear-space-demo .x-left { left: 24px; top: 50%; transform: translateY(-50%); }
+  .clear-space-demo .x-right { right: 24px; top: 50%; transform: translateY(-50%); }
+
+  /* MISUSE */
+  .errado {
+    background: var(--cream-warm);
+    padding: 32px 24px;
+    position: relative;
+    border: 1px solid var(--linha);
+    border-radius: 8px;
+  }
+  .errado::before {
+    content: '×';
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 28px; height: 28px;
+    background: #D94444;
+    color: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .errado p {
+    font-size: 12px;
+    margin-top: 12px;
+    color: var(--grafite);
+    opacity: 0.7;
+  }
+
+  /* APLICAÇÕES / MOCKUPS */
+  .mockup-frasco {
+    background: linear-gradient(180deg, #F8F5F1 0%, #EBE5DE 100%);
+    border-radius: 18px;
+    aspect-ratio: 0.68;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 -20px 40px rgba(0,0,0,0.04);
+  }
+  .mockup-frasco .tampa {
+    position: absolute;
+    top: 6%;
+    left: 22%;
+    right: 22%;
+    height: 16%;
+    background: linear-gradient(180deg, #F8F5F1 0%, #E5DDD3 100%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mockup-frasco .tampa .mono-tampa {
+    color: var(--gold);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: -0.08em;
+    text-transform: lowercase;
+  }
+  .mockup-frasco .rotulo-mini {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    right: 8%;
+    bottom: 12%;
+    background: var(--cor-produto, var(--rose));
+    border-radius: 6px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    color: var(--cream);
+  }
+  .mockup-frasco .rotulo-mini .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .mockup-frasco .rotulo-mini .assinatura {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 9px;
+  }
+  .mockup-frasco .rotulo-mini .assinatura .inside {
+    font-weight: 400;
+    opacity: 0.85;
+    margin-left: 3px;
+  }
+  .mockup-frasco .rotulo-mini .nome-produto {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+    margin-top: auto;
+  }
+  .mockup-frasco .rotulo-mini .bottom {
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-top: 6px;
+  }
+
+  .mockup-social {
+    background: var(--cream);
+    border: 1px solid var(--linha);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .mockup-social .avatar {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: var(--rose);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    color: var(--cream);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    letter-spacing: -0.1em;
+    text-transform: lowercase;
+  }
+  .mockup-social .handle {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .mockup-social .nome {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 17px;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .mockup-social .bio {
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--grafite);
+    opacity: 0.75;
+  }
+
+  .mockup-caixa {
+    background: var(--cream-warm);
+    border: 1px solid var(--linha);
+    aspect-ratio: 1;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+  }
+  .mockup-caixa::after {
+    content: 'caixa externa';
+    position: absolute;
+    bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    font-weight: 700;
+  }
+
+  /* FAVICON DEMO */
+  .favicon-demo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--cream-warm);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--linha);
+  }
+  .favicon-demo .ff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .favicon-demo .ff .t {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  footer {
+    padding: 56px 48px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    font-weight: 700;
+    border-top: 1px solid var(--linha);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">Logomarca Oficial · V2 · 2026</div>
+    <div class="logo">
+      <span class="sheglow">SheGlow</span>
+      <span class="inside">Inside</span>
+    </div>
+    <div class="tagline">Cada fase, um brilho.</div>
+  </section>
+
+  <!-- 1. ESTRATÉGIA -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">01 · Estratégia</div>
+      <h2 class="secao-titulo">Uma marca <em>popular</em>, não premium.</h2>
+      <p class="secao-lead">
+        A v1 era Aesop-editorial. Mudamos para mass-aspiracional: Bloom Nutrition + Olly + Hum. A logo agora é Outfit Black — sans-serif rounded pesado, que funciona em favicon, thumbnail, ad preview e prateleira. Força vem do peso, não de ornamento.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card--cream">
+        <div class="rotulo-card">Antes · v1 premium</div>
+        <div style="font-family: 'Fraunces', serif; font-weight: 900; font-style: italic; font-size: 42px; color: #B8929A;">SheGlow</div>
+        <div style="font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 24px; opacity: 0.5; margin-top: 4px;">Inside</div>
+        <div style="font-size: 12px; opacity: 0.5; margin-top: 16px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;">Aesop · Glossier · Sezane</div>
+      </div>
+      <div class="card card--cream">
+        <div class="rotulo-card">Agora · v2 mass</div>
+        <div class="logo" style="font-size: 42px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+        <div style="font-size: 12px; opacity: 0.55; margin-top: 16px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;">Bloom · Olly · Hum</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WORDMARK MASTER -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">02 · Wordmark Master</div>
+      <h2 class="secao-titulo">A composição <em>canônica</em>.</h2>
+      <p class="secao-lead">
+        SheGlow é uma palavra visual única (sem espaço entre She e Glow). Inside é modificador — mais leve, menor, subordinado. Esse é o logo principal, use sempre que couber horizontal.
+      </p>
+    </div>
+
+    <div class="card card--cream">
+      <div class="rotulo-card">Horizontal · primária</div>
+      <div class="logo" style="font-size: 92px;">
+        <span class="sheglow">SheGlow</span>
+        <span class="inside">Inside</span>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 20px;">
+      <div class="card card--cream">
+        <div class="rotulo-card">Stacked · vertical</div>
+        <div class="logo-stacked" style="font-size: 72px;">
+          <div class="linha-1">SheGlow</div>
+          <div class="linha-2">Inside</div>
+        </div>
+      </div>
+      <div class="card card--cream">
+        <div class="rotulo-card">Com tagline</div>
+        <div style="display: flex; align-items: center; gap: 28px;">
+          <div class="logo" style="font-size: 38px;">
+            <span class="sheglow">SheGlow</span>
+            <span class="inside">Inside</span>
+          </div>
+          <div style="width: 1px; height: 44px; background: var(--linha);"></div>
+          <div style="font-family: 'Outfit', sans-serif; font-style: italic; font-weight: 500; font-size: 16px; opacity: 0.65;">Cada fase, um brilho</div>
+        </div>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Fonte</th>
+          <th>Peso</th>
+          <th>Tamanho relativo</th>
+          <th>Cor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SheGlow</strong></td>
+          <td>Outfit</td>
+          <td>900 (Black)</td>
+          <td>100% (hero)</td>
+          <td><div class="swatch"><span class="swatch-dot" style="background: #1A1A1A;"></span><code>#1A1A1A</code></div></td>
+        </tr>
+        <tr>
+          <td>Inside</td>
+          <td>Outfit</td>
+          <td>500 (Medium)</td>
+          <td>55% do SheGlow</td>
+          <td><div class="swatch"><span class="swatch-dot" style="background: #1A1A1A; opacity: 0.7;"></span><code>#1A1A1A @ 70%</code></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. VERSÃO COM ACENTO -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">03 · Variação Acentuada</div>
+      <h2 class="secao-titulo">Com rose no <em>Glow</em>.</h2>
+      <p class="secao-lead">
+        Para aplicações específicas (hero do site, landing de lançamento, peças promocionais), o <em>Glow</em> pode ganhar acento em Rose Vibrante. A versão monocromática continua sendo o padrão oficial; esta é variação opcional.
+      </p>
+    </div>
+
+    <div class="card card--cream">
+      <div class="rotulo-card">Com acento rose</div>
+      <div class="logo logo--accent" style="font-size: 80px;">
+        <span class="sheglow">She<span class="glow">Glow</span></span>
+        <span class="inside">Inside</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MONOGRAMA -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">04 · Monograma</div>
+      <h2 class="secao-titulo">Quando o wordmark <em>não cabe</em>.</h2>
+      <p class="secao-lead">
+        Favicon, avatar social, lacre, selo. O monograma "sg" lowercase em círculo é a marca comprimida — mantém o peso da tipografia, ganha forma circular que remete ao ciclo.
+      </p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card card--cream">
+        <div class="rotulo-card">Rose filled</div>
+        <div class="monogram-circle filled-rose" style="font-size: 128px;">
+          <div class="monogram sg">sg</div>
+        </div>
+      </div>
+      <div class="card card--cream">
+        <div class="rotulo-card">Grafite filled</div>
+        <div class="monogram-circle filled-grafite" style="font-size: 128px;">
+          <div class="monogram sg">sg</div>
+        </div>
+      </div>
+      <div class="card card--cream">
+        <div class="rotulo-card">Rose outline</div>
+        <div class="monogram-circle outline-rose" style="font-size: 128px;">
+          <div class="monogram sg">sg</div>
+        </div>
+      </div>
+      <div class="card card--cream">
+        <div class="rotulo-card">Gold · edição especial</div>
+        <div class="monogram-circle filled-gold" style="font-size: 128px;">
+          <div class="monogram sg">sg</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px;">
+      <div class="rotulo-card" style="position: static; margin-bottom: 12px;">Favicon · avatar · lacre (tamanhos reais)</div>
+      <div class="favicon-demo">
+        <div class="ff">
+          <div class="monogram-circle filled-rose" style="font-size: 16px;"><div class="monogram sg">sg</div></div>
+          <div class="t">16px</div>
+        </div>
+        <div class="ff">
+          <div class="monogram-circle filled-rose" style="font-size: 32px;"><div class="monogram sg">sg</div></div>
+          <div class="t">32px</div>
+        </div>
+        <div class="ff">
+          <div class="monogram-circle filled-rose" style="font-size: 48px;"><div class="monogram sg">sg</div></div>
+          <div class="t">48px</div>
+        </div>
+        <div class="ff">
+          <div class="monogram-circle filled-rose" style="font-size: 64px;"><div class="monogram sg">sg</div></div>
+          <div class="t">64px</div>
+        </div>
+        <div class="ff">
+          <div class="monogram-circle filled-rose" style="font-size: 96px;"><div class="monogram sg">sg</div></div>
+          <div class="t">96px</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. VARIAÇÕES CROMÁTICAS -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">05 · Variações Cromáticas</div>
+      <h2 class="secao-titulo">A marca em <em>seis cenários</em>.</h2>
+      <p class="secao-lead">
+        Cada variação existe por uma razão funcional. Sobre fundo cream a marca é grafite. Sobre fundos coloridos dos produtos, a marca vira cream. Dourada é reservada.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card--cream">
+        <div class="rotulo-card">Positiva · primária</div>
+        <div class="logo" style="font-size: 54px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+      </div>
+      <div class="card card--grafite">
+        <div class="rotulo-card">Negativa · grafite</div>
+        <div class="logo logo--negativa" style="font-size: 54px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-5" style="margin-top: 20px;">
+      <div class="card card--rose" style="padding: 40px 20px; min-height: 140px;">
+        <div class="rotulo-card">Hair</div>
+        <div class="logo logo--negativa" style="font-size: 22px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+      </div>
+      <div class="card card--verde" style="padding: 40px 20px; min-height: 140px;">
+        <div class="rotulo-card">Skin</div>
+        <div class="logo logo--negativa" style="font-size: 22px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+      </div>
+      <div class="card card--amarelo" style="padding: 40px 20px; min-height: 140px;">
+        <div class="rotulo-card">Imune</div>
+        <div class="logo logo--negativa" style="font-size: 22px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+      </div>
+      <div class="card card--laranja" style="padding: 40px 20px; min-height: 140px;">
+        <div class="rotulo-card">Energy</div>
+        <div class="logo logo--negativa" style="font-size: 22px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+      </div>
+      <div class="card card--cereja" style="padding: 40px 20px; min-height: 140px;">
+        <div class="rotulo-card">Fit</div>
+        <div class="logo logo--negativa" style="font-size: 22px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card card--cream" style="margin-top: 20px;">
+      <div class="rotulo-card">Dourada · edições especiais (uso restrito)</div>
+      <div class="logo logo--gold" style="font-size: 54px;">
+        <span class="sheglow">SheGlow</span>
+        <span class="inside">Inside</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ESPAÇAMENTO -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">06 · Área de Respiro</div>
+      <h2 class="secao-titulo">O <em>silêncio</em> ao redor.</h2>
+      <p class="secao-lead">
+        A área livre ao redor do logo é igual à altura da letra <strong>S</strong>. Nada — texto, imagem, borda — invade essa área.
+      </p>
+    </div>
+
+    <div class="card card--cream" style="padding: 100px;">
+      <div class="clear-space-demo">
+        <span class="bordas-x x-top">X</span>
+        <span class="bordas-x x-bottom">X</span>
+        <span class="bordas-x x-left">X</span>
+        <span class="bordas-x x-right">X</span>
+        <div class="logo" style="font-size: 48px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <thead>
+        <tr><th>Aplicação</th><th>Mínimo</th><th>Recomendado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Digital (web, app)</td><td>100px</td><td>140–200px</td></tr>
+        <tr><td>Impressão</td><td>22mm</td><td>40–60mm</td></tr>
+        <tr><td>Monograma digital</td><td>24px</td><td>32–96px</td></tr>
+        <tr><td>Monograma impressão</td><td>8mm</td><td>12–20mm</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 7. APLICAÇÕES -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">07 · Aplicações</div>
+      <h2 class="secao-titulo">A marca <em>no mundo</em>.</h2>
+      <p class="secao-lead">
+        A logomarca vive no site, caixa, institucional. Nos rótulos de produto vai em versão pequena (cream sobre cor saturada). No frasco, o monograma em gold foil assume.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <!-- FRASCO -->
+      <div>
+        <div class="mockup-frasco" style="--cor-produto: #E85A7B;">
+          <div class="tampa">
+            <div class="mono-tampa">sg</div>
+          </div>
+          <div class="rotulo-mini">
+            <div class="top-row">
+              <div class="assinatura">SheGlow<span class="inside">Inside</span></div>
+            </div>
+            <div class="nome-produto">glow<br>hair</div>
+            <div class="bottom">60 CÁPS · 30 DIAS</div>
+          </div>
+        </div>
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; opacity: 0.5; margin-top: 16px; text-align: center;">Frasco + monograma em gold</div>
+      </div>
+
+      <!-- INSTAGRAM -->
+      <div>
+        <div class="mockup-social">
+          <div class="avatar">sg</div>
+          <div class="handle">@sheglowinside</div>
+          <div class="nome">SheGlow Inside</div>
+          <div class="bio">
+            Cada fase, um brilho 🌸<br>
+            Wellness por fase de vida feminina.<br>
+            A partir de R$ 69,90 · frete grátis<br>
+            ⬇️ Comprar
+          </div>
+        </div>
+        <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; opacity: 0.5; margin-top: 16px; text-align: center;">Instagram avatar + bio</div>
+      </div>
+
+      <!-- CAIXA -->
+      <div>
+        <div class="mockup-caixa">
+          <div class="logo" style="font-size: 24px;">
+            <span class="sheglow">SheGlow</span>
+            <span class="inside">Inside</span>
+          </div>
+          <div style="font-family: 'Outfit', sans-serif; font-style: italic; font-weight: 500; font-size: 12px; opacity: 0.6; margin-top: 14px;">Cada fase, um brilho</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. NÃO FAZER -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">08 · O que nunca fazer</div>
+      <h2 class="secao-titulo">As <em>regras</em> protegem a marca.</h2>
+    </div>
+
+    <div class="grid-3">
+      <div class="errado">
+        <div style="font-family: 'Arial', sans-serif; font-weight: 900; font-size: 26px;">SheGlow Inside</div>
+        <p>Nunca alterar a fonte. Só Outfit.</p>
+      </div>
+      <div class="errado">
+        <div class="logo" style="font-size: 26px; transform: skew(-8deg);">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+        <p>Nunca inclinar, rotacionar ou esticar.</p>
+      </div>
+      <div class="errado">
+        <div class="logo" style="font-size: 26px; text-transform: uppercase;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+        <p>Nunca em caixa alta total.</p>
+      </div>
+      <div class="errado">
+        <div class="logo" style="font-size: 26px;">
+          <span class="sheglow">She Glow</span>
+          <span class="inside">Inside</span>
+        </div>
+        <p>Nunca separar She e Glow.</p>
+      </div>
+      <div class="errado">
+        <div class="logo" style="font-size: 26px; text-shadow: 2px 2px 0 rgba(0,0,0,0.2);">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside">Inside</span>
+        </div>
+        <p>Nunca usar sombras ou efeitos.</p>
+      </div>
+      <div class="errado">
+        <div class="logo" style="font-size: 26px;">
+          <span class="sheglow">SheGlow</span>
+          <span class="inside" style="font-weight: 900; opacity: 1;">Inside</span>
+        </div>
+        <p>Nunca mudar o peso do Inside.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. PALETA -->
+  <section class="bloco">
+    <div class="secao-header">
+      <div class="secao-numero">09 · Paleta da Logo</div>
+      <h2 class="secao-titulo">Quatro cores <em>oficiais</em>.</h2>
+      <p class="secao-lead">
+        As cores dos produtos (rose vibrante, verde fresh, amarelo mel, laranja sunrise, cereja) NÃO são cores institucionais da logo — ficam apenas nos rótulos. A logo master vive sempre nesta paleta.
+      </p>
+    </div>
+
+    <table class="spec-table">
+      <thead>
+        <tr><th>Cor</th><th>Hex</th><th>RGB</th><th>CMYK</th><th>Pantone</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="swatch"><span class="swatch-dot" style="background: #1A1A1A;"></span>Grafite</div></td>
+          <td><code>#1A1A1A</code></td>
+          <td>26, 26, 26</td>
+          <td>0, 0, 0, 90</td>
+          <td>Black 6 C</td>
+        </tr>
+        <tr>
+          <td><div class="swatch"><span class="swatch-dot" style="background: #E85A7B;"></span>Rose Vibrante</div></td>
+          <td><code>#E85A7B</code></td>
+          <td>232, 90, 123</td>
+          <td>0, 75, 40, 0</td>
+          <td>212 C (aprox.)</td>
+        </tr>
+        <tr>
+          <td><div class="swatch"><span class="swatch-dot" style="background: #FFF8F2; border: 1px solid var(--linha);"></span>Cream</div></td>
+          <td><code>#FFF8F2</code></td>
+          <td>255, 248, 242</td>
+          <td>0, 3, 5, 0</td>
+          <td>9160 C (aprox.)</td>
+        </tr>
+        <tr>
+          <td><div class="swatch"><span class="swatch-dot" style="background: #BFA15E;"></span>Gold</div></td>
+          <td><code>#BFA15E</code></td>
+          <td>191, 161, 94</td>
+          <td>25, 35, 70, 10</td>
+          <td>871 C (metalizado)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<footer>
+  SheGlow Inside · Brand Identity System v2 · Design Chief · 2026
+</footer>
+
+</body>
+</html>

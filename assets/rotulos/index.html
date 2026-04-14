@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>SheGlow — Rótulos (Print-ready)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #FDFBF8;
+    color: #1C1C1C;
+    padding: 60px 40px 80px;
+  }
+  .container { max-width: 960px; margin: 0 auto; }
+
+  header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .logo .glow { color: #C4929A; font-style: italic; }
+  .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #888;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-top: 32px;
+    line-height: 1.2;
+  }
+  h1 em { color: #C4929A; }
+
+  .intro {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 20px auto 0;
+    color: #555;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 12px;
+    padding: 28px 24px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    border-color: transparent;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--cor);
+  }
+
+  .card .produto {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .card .produto em {
+    color: var(--cor);
+    font-weight: 700;
+  }
+  .card .beneficio {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  .card .specs {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555;
+  }
+  .card .specs strong { color: #1C1C1C; font-weight: 600; }
+  .card .cta {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cor);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .instrucoes {
+    margin-top: 56px;
+    padding: 32px;
+    background: #F8F5F1;
+    border-radius: 12px;
+  }
+  .instrucoes h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .instrucoes ol {
+    padding-left: 22px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+  }
+  .instrucoes li { margin-bottom: 6px; }
+  .instrucoes code {
+    background: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .nota {
+    margin-top: 40px;
+    padding: 24px 28px;
+    border-left: 3px solid #BFA15E;
+    background: #FDFBF8;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555;
+  }
+  .nota strong { color: #1C1C1C; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="logo">She<span class="glow">Glow</span></div>
+    <div class="sub">Rótulos · Print-ready</div>
+    <h1>5 rótulos prontos pra <em>gráfica</em></h1>
+    <p class="intro">Cada rótulo abre em arquivo próprio com dimensões exatas de impressão (sangria 3mm inclusa, marcas de corte nos cantos). Abra, clique em <strong>Imprimir</strong> e salve como PDF.</p>
+  </header>
+
+  <div class="grid">
+
+    <a href="glow-hair.html" class="card" style="--cor: #BA5670;" target="_blank">
+      <div class="produto">glow <em>hair</em></div>
+      <div class="beneficio">Cabelo · Pele · Unhas</div>
+      <div class="specs">
+        <div><strong>Frasco:</strong> 60 cáps · 33g</div>
+        <div><strong>Dimensão:</strong> 180×70mm</div>
+        <div><strong>Cor:</strong> Rose Profundo #A64D5F</div>
+      </div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+    <a href="glow-skin.html" class="card" style="--cor: #9DAA72;" target="_blank">
+      <div class="produto">glow <em>skin</em></div>
+      <div class="beneficio">Colágeno · Firmeza · Vitalidade</div>
+      <div class="specs">
+        <div><strong>Pote:</strong> pó 360g · frutas vermelhas</div>
+        <div><strong>Dimensão:</strong> 302×90mm</div>
+        <div><strong>Cor:</strong> Sage Oliva #8A9B6E</div>
+      </div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+    <a href="glow-imune-articula.html" class="card" style="--cor: #C89950;" target="_blank">
+      <div class="produto">glow <em>imune &amp; articula</em></div>
+      <div class="beneficio">Imunidade · Articulações · Ossos</div>
+      <div class="specs">
+        <div><strong>Frasco:</strong> 60 cáps · 34g</div>
+        <div><strong>Dimensão:</strong> 180×70mm</div>
+        <div><strong>Cor:</strong> Âmbar Dourado #B8893C</div>
+      </div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+    <a href="glow-energy.html" class="card" style="--cor: #D07A5C;" target="_blank">
+      <div class="produto">glow <em>energy</em></div>
+      <div class="beneficio">Energia · Disposição · Foco</div>
+      <div class="specs">
+        <div><strong>Frasco:</strong> 60 cáps · 38g</div>
+        <div><strong>Dimensão:</strong> 180×70mm</div>
+        <div><strong>Cor:</strong> Terracota #B0583D</div>
+      </div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+    <a href="glow-fit.html" class="card" style="--cor: #6E2E3D;" target="_blank">
+      <div class="produto">glow <em>fit</em></div>
+      <div class="beneficio">Detox · Equilíbrio · Metabolismo</div>
+      <div class="specs">
+        <div><strong>Frasco:</strong> 60 cáps · 33g</div>
+        <div><strong>Dimensão:</strong> 180×70mm</div>
+        <div><strong>Cor:</strong> Bordô #6B2E3F</div>
+      </div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+  </div>
+
+  <div class="instrucoes">
+    <h2>Como exportar pra gráfica</h2>
+    <ol>
+      <li>Abra cada rótulo (clique no card acima).</li>
+      <li>Pressione <code>Cmd+P</code> (ou <code>Ctrl+P</code>) — abre o diálogo de impressão.</li>
+      <li>Em "Destino", escolha <strong>Salvar como PDF</strong>.</li>
+      <li>Em "Tamanho do papel", selecione <strong>Personalizado</strong> e use as dimensões indicadas na folha (186×76mm ou 308×96mm com sangria).</li>
+      <li>Em "Margens", deixe <strong>Nenhuma</strong>. Ative <strong>Gráficos de fundo</strong> (background graphics).</li>
+      <li>Salve. Envie o PDF pra gráfica junto com a faca técnica (linhas de corte e sangria já embutidas no arquivo).</li>
+    </ol>
+  </div>
+
+  <div class="nota">
+    <strong>Campos que precisam ser preenchidos antes do envio final:</strong> CNPJ da SheGlow em todos os rótulos (procure por <code>CNPJ [preencher]</code>). No Glow Skin também o e-mail de contato definitivo.
+    <br><br>
+    <strong>Revisão regulatória recomendada:</strong> passar todos os rótulos por um nutricionista ou consultoria ANVISA antes da produção. Os dados técnicos foram copiados fielmente dos arquivos white label da fábrica.
+  </div>
+
+</div>
+
+</body>
+</html>

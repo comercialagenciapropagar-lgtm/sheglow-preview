@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>SheGlow Inside v2 — Rótulos Olly-style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: #FFF8F2;
+    color: #1A1A1A;
+    padding: 60px 32px 80px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  header { text-align: center; margin-bottom: 56px; }
+  .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .logo .inside { font-weight: 500; opacity: 0.75; margin-left: 6px; }
+  .tag-v2 {
+    display: inline-block;
+    background: #E85A7B;
+    color: #FFF8F2;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-top: 24px;
+    line-height: 1.15;
+  }
+  .intro {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 20px auto 0;
+    color: #555;
+  }
+
+  .posicionamento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 48px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    text-align: left;
+  }
+  .posicionamento .item .l {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  .posicionamento .item .v {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    border-color: transparent;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--cor);
+  }
+
+  .card .produto {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
+    text-transform: lowercase;
+    color: var(--cor);
+  }
+  .card .beneficio {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #1A1A1A;
+    opacity: 0.65;
+    margin-bottom: 20px;
+  }
+  .card .specs {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555;
+  }
+  .card .specs strong { color: #1A1A1A; font-weight: 700; }
+  .card .preco {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 14px;
+    background: var(--cor);
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+  .card .cta {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cor);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mudancas {
+    margin-top: 72px;
+    padding: 32px;
+    background: #fff;
+    border-radius: 12px;
+  }
+  .mudancas h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+  .mudancas table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .mudancas th, .mudancas td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+  .mudancas th {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+  .mudancas .antes { color: #999; text-decoration: line-through; }
+  .mudancas .agora { color: #E85A7B; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="logo">SheGlow<span class="inside">Inside</span></div>
+    <div class="tag-v2">Rótulos v2 · Olly-style</div>
+    <h1>Mass aspiracional. Thumbnail-friendly.</h1>
+    <p class="intro">Reposicionamento: de premium-boutique (Aesop) para popular-aspiracional (Bloom/Olly). Cores saturadas, tipografia Outfit 900 Black, badges circulares funcionais, fundo colorido pra funcionar em thumbnail social de 200×200px.</p>
+
+    <div class="posicionamento">
+      <div class="item">
+        <div class="l">Preço</div>
+        <div class="v">R$ 69,90</div>
+      </div>
+      <div class="item">
+        <div class="l">Canal</div>
+        <div class="v">IG + TikTok → DTC</div>
+      </div>
+      <div class="item">
+        <div class="l">Referência</div>
+        <div class="v">Bloom Nutrition</div>
+      </div>
+      <div class="item">
+        <div class="l">Tipografia</div>
+        <div class="v">Outfit 900</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <a href="glow-hair-v2.html" class="card" style="--cor: #E85A7B;" target="_blank">
+      <div class="produto">glow hair</div>
+      <div class="beneficio">Cabelo · Pele · Unhas</div>
+      <div class="specs">
+        <div><strong>Frasco:</strong> 60 cáps · 33g</div>
+        <div><strong>Cor:</strong> Rose Vibrante #E85A7B</div>
+        <div><strong>Badge:</strong> 30 dias de dosagem</div>
+      </div>
+      <div class="preco">R$ 69,90</div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+    <a href="glow-skin-v2.html" class="card" style="--cor: #8CAB5E;" target="_blank">
+      <div class="produto">glow skin</div>
+      <div class="beneficio">Colágeno · Firmeza · Vitalidade</div>
+      <div class="specs">
+        <div><strong>Pote:</strong> pó 360g · frutas vermelhas</div>
+        <div><strong>Cor:</strong> Verde Fresh #8CAB5E</div>
+        <div><strong>Badge:</strong> 12g dose diária</div>
+      </div>
+      <div class="preco">R$ 89,90</div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+    <a href="glow-imune-articula-v2.html" class="card" style="--cor: #E8B73A;" target="_blank">
+      <div class="produto">glow imune &amp; articula</div>
+      <div class="beneficio">Imunidade · Articulações · Ossos</div>
+      <div class="specs">
+        <div><strong>Frasco:</strong> 60 cáps · 34g</div>
+        <div><strong>Cor:</strong> Amarelo Mel #E8B73A</div>
+        <div><strong>Badge:</strong> D3 + K2 · cúrcuma + MSM</div>
+      </div>
+      <div class="preco">R$ 79,90</div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+    <a href="glow-energy-v2.html" class="card" style="--cor: #F07C4A;" target="_blank">
+      <div class="produto">glow energy</div>
+      <div class="beneficio">Energia · Disposição · Foco</div>
+      <div class="specs">
+        <div><strong>Frasco:</strong> 60 cáps · 38g</div>
+        <div><strong>Cor:</strong> Laranja Sunrise #F07C4A</div>
+        <div><strong>Badge:</strong> 75mg cafeína · L-arginina</div>
+      </div>
+      <div class="preco">R$ 69,90</div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+    <a href="glow-fit-v2.html" class="card" style="--cor: #B13E54;" target="_blank">
+      <div class="produto">glow fit</div>
+      <div class="beneficio">Detox · Equilíbrio · Metabolismo</div>
+      <div class="specs">
+        <div><strong>Frasco:</strong> 60 cáps · 33g</div>
+        <div><strong>Cor:</strong> Cereja #B13E54</div>
+        <div><strong>Badge:</strong> 75mg cafeína · laranja moro</div>
+      </div>
+      <div class="preco">R$ 69,90</div>
+      <div class="cta">Abrir rótulo →</div>
+    </a>
+
+  </div>
+
+  <div class="mudancas">
+    <h2>v1 (premium) → v2 (mass aspiracional)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Dimensão</th>
+          <th>Antes (v1 premium)</th>
+          <th>Agora (v2 Olly-style)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tipografia</strong></td>
+          <td class="antes">Fraunces 900 serif editorial</td>
+          <td class="agora">Outfit 900 sans rounded</td>
+        </tr>
+        <tr>
+          <td><strong>Moodboard</strong></td>
+          <td class="antes">Aesop, Glossier, Sezane</td>
+          <td class="agora">Bloom, Olly, Hum, Liquid IV</td>
+        </tr>
+        <tr>
+          <td><strong>Paleta</strong></td>
+          <td class="antes">Tons mutedos sofisticados</td>
+          <td class="agora">Cores vibrantes saturadas</td>
+        </tr>
+        <tr>
+          <td><strong>Elemento gráfico</strong></td>
+          <td class="antes">Puro texto · minimalismo radical</td>
+          <td class="agora">Badge circular funcional</td>
+        </tr>
+        <tr>
+          <td><strong>Canal</strong></td>
+          <td class="antes">DTC boutique premium</td>
+          <td class="agora">Instagram + TikTok → DTC</td>
+        </tr>
+        <tr>
+          <td><strong>Preço entrada</strong></td>
+          <td class="antes">R$ 189–249</td>
+          <td class="agora">R$ 69,90</td>
+        </tr>
+        <tr>
+          <td><strong>Tom de voz</strong></td>
+          <td class="antes">Amiga nutricionista sussurrando</td>
+          <td class="agora">Direta, confiante, alegre</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>

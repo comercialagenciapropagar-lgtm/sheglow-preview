@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>SheGlow Inside — Entrega Design Chief v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --grafite: #1A1A1A;
+    --rose: #E85A7B;
+    --rose-esc: #C43E61;
+    --cream: #FFF8F2;
+    --cream-warm: #FDF4EB;
+    --linha: rgba(26, 26, 26, 0.12);
+    --hair: #E85A7B;
+    --skin: #8CAB5E;
+    --imune: #E8B73A;
+    --energy: #F07C4A;
+    --fit: #B13E54;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--grafite);
+    line-height: 1.6;
+  }
+
+  .wrapper { max-width: 1200px; margin: 0 auto; padding: 60px 32px 100px; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 60px 0 80px;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--cream);
+    background: var(--rose);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+  }
+  .logo-hero {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 88px;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
+  }
+  .logo-hero .inside {
+    font-size: 0.55em;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+  .tagline {
+    font-family: 'Outfit', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--grafite);
+    opacity: 0.65;
+  }
+  .subtitulo {
+    margin-top: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--grafite);
+    opacity: 0.75;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.65;
+  }
+
+  /* POSICIONAMENTO SNAPSHOT */
+  .snapshot {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 48px;
+    border: 1px solid var(--linha);
+  }
+  .snapshot h3 {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 20px;
+  }
+  .snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .snapshot-item .label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grafite);
+    opacity: 0.55;
+    margin-bottom: 6px;
+  }
+  .snapshot-item .valor {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  /* SEÇÕES DE ENTREGA */
+  .entregas {
+    margin-top: 72px;
+  }
+  .entregas h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+  .entregas h2 em {
+    font-style: normal;
+    color: var(--rose);
+  }
+
+  .grid-entregas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .entregavel {
+    background: #fff;
+    border: 1px solid var(--linha);
+    border-radius: 16px;
+    padding: 32px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s ease;
+  }
+  .entregavel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--rose);
+  }
+  .entregavel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+    border-color: transparent;
+  }
+  .entregavel .numero {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 8px;
+  }
+  .entregavel h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .entregavel .desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--grafite);
+    opacity: 0.7;
+    margin-bottom: 24px;
+  }
+  .entregavel .meta {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--linha);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .entregavel .meta .status {
+    color: #4A9B5E;
+  }
+  .entregavel .meta .cta {
+    color: var(--rose);
+  }
+
+  /* Entregáveis coloridos para cada rótulo */
+  .entregavel.hair::before { background: var(--hair); }
+  .entregavel.skin::before { background: var(--skin); }
+  .entregavel.imune::before { background: var(--imune); }
+  .entregavel.energy::before { background: var(--energy); }
+  .entregavel.fit::before { background: var(--fit); }
+
+  .grid-rotulos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .grid-rotulos .entregavel {
+    padding: 24px 20px;
+  }
+  .grid-rotulos .entregavel h3 {
+    font-size: 18px;
+    text-transform: lowercase;
+  }
+  .grid-rotulos .entregavel .desc {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  .grid-rotulos .entregavel .preco {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .grid-rotulos .entregavel.hair h3 { color: var(--hair); }
+  .grid-rotulos .entregavel.skin h3 { color: var(--skin); }
+  .grid-rotulos .entregavel.imune h3 { color: #B8881F; }
+  .grid-rotulos .entregavel.energy h3 { color: var(--energy); }
+  .grid-rotulos .entregavel.fit h3 { color: var(--fit); }
+
+  /* CHECKLIST PRÓXIMOS PASSOS */
+  .proximos {
+    margin-top: 72px;
+    background: var(--grafite);
+    color: var(--cream);
+    border-radius: 16px;
+    padding: 48px;
+  }
+  .proximos h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+  }
+  .proximos .sub {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 32px;
+  }
+  .proximos ol {
+    list-style: none;
+    counter-reset: proximos-counter;
+  }
+  .proximos li {
+    counter-increment: proximos-counter;
+    position: relative;
+    padding: 16px 0 16px 48px;
+    border-bottom: 1px solid rgba(255, 248, 242, 0.12);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .proximos li:last-child { border-bottom: none; }
+  .proximos li::before {
+    content: counter(proximos-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font-weight: 900;
+    font-size: 14px;
+    color: var(--rose);
+    letter-spacing: 0.1em;
+  }
+  .proximos li strong { font-weight: 800; }
+
+  footer {
+    padding: 56px 0;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    font-weight: 800;
+    margin-top: 48px;
+    border-top: 1px solid var(--linha);
+  }
+
+  @media (max-width: 800px) {
+    .snapshot-grid { grid-template-columns: 1fr 1fr; }
+    .grid-entregas { grid-template-columns: 1fr; }
+    .grid-rotulos { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">Entrega · Design Chief · v2</div>
+    <div class="logo-hero">
+      <span>SheGlow</span>
+      <span class="inside">Inside</span>
+    </div>
+    <div class="tagline">Cada fase, um brilho.</div>
+    <p class="subtitulo">
+      Reposicionamento completo: de premium-boutique para mass-market aspiracional nichado. Brandbook v2 + logomarca v2 + 5 rótulos v2 prontos pra imprimir.
+    </p>
+  </section>
+
+  <!-- SNAPSHOT -->
+  <div class="snapshot">
+    <h3>Posicionamento aprovado</h3>
+    <div class="snapshot-grid">
+      <div class="snapshot-item">
+        <div class="label">Segmento</div>
+        <div class="valor">Mass aspiracional</div>
+      </div>
+      <div class="snapshot-item">
+        <div class="label">Preço entrada</div>
+        <div class="valor">R$ 69,90</div>
+      </div>
+      <div class="snapshot-item">
+        <div class="label">Canal</div>
+        <div class="valor">IG + TikTok → DTC</div>
+      </div>
+      <div class="snapshot-item">
+        <div class="label">Referência</div>
+        <div class="valor">Bloom · Olly</div>
+      </div>
+      <div class="snapshot-item">
+        <div class="label">Categoria</div>
+        <div class="valor">Fase de vida feminina</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTREGÁVEIS PRINCIPAIS -->
+  <section class="entregas">
+    <h2>Os quatro <em>entregáveis</em>.</h2>
+
+    <div class="grid-entregas">
+
+      <a href="../brand/BRANDING_SHEGLOW.md" class="entregavel" target="_blank">
+        <div class="numero">01 · Brandbook</div>
+        <h3>Brand Book v2 completo</h3>
+        <p class="desc">Posicionamento, manifesto, arquitetura de produtos, pricing com assinatura, paleta, tipografia Outfit, tom de voz, canal DTC, estratégia de lançamento em 4 ondas.</p>
+        <div class="meta">
+          <span class="status">● Completo</span>
+          <span class="cta">Abrir markdown →</span>
+        </div>
+      </a>
+
+      <a href="logomarca.html" class="entregavel" target="_blank">
+        <div class="numero">02 · Logomarca</div>
+        <h3>Identidade oficial v2</h3>
+        <p class="desc">Wordmark master, versão stacked, com tagline, monograma "sg", variações cromáticas (6 cenários), espaçamentos, tamanho mínimo, usos incorretos, paleta CMYK/Pantone.</p>
+        <div class="meta">
+          <span class="status">● Aprovado</span>
+          <span class="cta">Abrir showcase →</span>
+        </div>
+      </a>
+
+      <a href="rotulos/index-v2.html" class="entregavel" target="_blank">
+        <div class="numero">03 · Rótulos</div>
+        <h3>5 rótulos Olly-style</h3>
+        <p class="desc">Print-ready com sangria 3mm e marcas de corte. Tipografia Outfit 900, cores saturadas por SKU, badges circulares funcionais. Prontos pra gráfica — só preencher CNPJ da SheGlow.</p>
+        <div class="meta">
+          <span class="status">● Aprovado</span>
+          <span class="cta">Abrir hub →</span>
+        </div>
+      </a>
+
+      <a href="../brand/LOGOMARCA_SHEGLOW.md" class="entregavel" target="_blank">
+        <div class="numero">04 · Guidelines</div>
+        <h3>Especificações técnicas</h3>
+        <p class="desc">Documento técnico com regras de uso, tipografia, proporções, cores técnicas (Hex/RGB/CMYK/Pantone), tamanhos mínimos, 10 regras do "nunca fazer", checklist de aprovação.</p>
+        <div class="meta">
+          <span class="status">● Completo</span>
+          <span class="cta">Abrir markdown →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 5 RÓTULOS DIRETOS -->
+  <section class="entregas">
+    <h2>5 rótulos <em>prontos</em>.</h2>
+
+    <div class="grid-rotulos">
+      <a href="rotulos/glow-hair-v2.html" class="entregavel hair" target="_blank">
+        <div class="numero">Hair</div>
+        <h3>glow hair</h3>
+        <p class="desc">Cabelo · Pele · Unhas</p>
+        <div class="preco">R$ 69,90</div>
+      </a>
+      <a href="rotulos/glow-skin-v2.html" class="entregavel skin" target="_blank">
+        <div class="numero">Skin</div>
+        <h3>glow skin</h3>
+        <p class="desc">Colágeno · Firmeza</p>
+        <div class="preco">R$ 89,90</div>
+      </a>
+      <a href="rotulos/glow-imune-articula-v2.html" class="entregavel imune" target="_blank">
+        <div class="numero">Imune & Articula</div>
+        <h3>glow imune</h3>
+        <p class="desc">Imunidade · Ossos</p>
+        <div class="preco">R$ 79,90</div>
+      </a>
+      <a href="rotulos/glow-energy-v2.html" class="entregavel energy" target="_blank">
+        <div class="numero">Energy</div>
+        <h3>glow energy</h3>
+        <p class="desc">Energia · Foco</p>
+        <div class="preco">R$ 69,90</div>
+      </a>
+      <a href="rotulos/glow-fit-v2.html" class="entregavel fit" target="_blank">
+        <div class="numero">Fit</div>
+        <h3>glow fit</h3>
+        <p class="desc">Detox · Metabolismo</p>
+        <div class="preco">R$ 69,90</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- PRÓXIMOS PASSOS -->
+  <div class="proximos">
+    <h2>Próximos passos</h2>
+    <p class="sub">O que precisa acontecer agora que a identidade foi aprovada.</p>
+    <ol>
+      <li><strong>CNPJ da SheGlow Inside</strong> — preencher em todos os 5 rótulos (procurar por <code>CNPJ [preencher]</code>).</li>
+      <li><strong>Registro INPI</strong> — marca nominativa "SheGlow Inside" + marca mista (logo) no Instituto Nacional da Propriedade Industrial.</li>
+      <li><strong>Vetorização final</strong> — converter logo e monograma para SVG puro (não dependente de Google Fonts em runtime) para envio a gráficas.</li>
+      <li><strong>Revisão regulatória</strong> — passar os 5 rótulos por nutricionista ou consultoria ANVISA antes da produção.</li>
+      <li><strong>Teste impresso</strong> — tirar prova de gráfica de 1 rótulo (Glow Hair) pra validar cor real no PEAD e legibilidade em tamanho físico.</li>
+      <li><strong>Landing DTC</strong> — construir página própria com os 5 produtos, bundles (Starter R$ 139,90), checkout com assinatura (−15%) e integração Instagram/TikTok.</li>
+      <li><strong>Produção piloto</strong> — encomendar lote-teste de 500 unidades (100 por SKU) na WEVJ pra lançamento controlado.</li>
+      <li><strong>Estratégia de influência</strong> — mapear 10 microinfluencers nicho (nutri, dermato, maternidade) pra seed-list pré-lançamento.</li>
+    </ol>
+  </div>
+
+  <footer>
+    Design Chief · SheGlow Inside · v2 · 2026-04-14
+  </footer>
+
+</div>
+
+</body>
+</html>
